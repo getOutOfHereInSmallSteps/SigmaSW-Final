@@ -1,0 +1,9 @@
+@import '../../styles/main.scss';
+
+.banners {
+  @include container();
+  display: flex;
+  justify-content: space-between;
+  gap: 3.6rem;
+  margin-bottom: 19rem;
+}

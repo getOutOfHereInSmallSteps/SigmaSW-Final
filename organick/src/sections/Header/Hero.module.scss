@@ -1,0 +1,30 @@
+@import '../../styles/main.scss';
+
+.hero {
+  background-image: url('../../imgs/hero-background.png');
+  background-size: cover;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__content {
+    @include container();
+    flex: 1;
+    &-subheading {
+      @include subheading(1rem);
+    }
+
+    &-heading {
+      @include heading(2.4rem);
+      font-size: 7rem;
+      max-width: 53rem;
+    }
+
+    &-button {
+      @include button();
+      background-color: $color-primary-yellow;
+      color: $color-primary-blue;
+    }
+  }
+}
