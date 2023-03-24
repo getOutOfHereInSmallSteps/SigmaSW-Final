@@ -21,7 +21,7 @@
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-style: 1.8rem;
+  font-size: 1.8rem;
   color: $color-paragraph-gray;
 }
 
@@ -40,6 +40,7 @@
   background-color: $color-primary-blue;
   width: auto;
   display: inline-block;
+  cursor: pointer;
 }
 
 @mixin container {
