@@ -1,0 +1,109 @@
+@import '../../styles/main.scss';
+
+.container {
+  @include container();
+}
+
+.product {
+  display: none;
+
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 11.5rem 0rem 14rem;
+  background-color: #fffafa;
+
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 9rem;
+    &-img {
+      background-color: $color-background-light-gray;
+      background-image: url('../../imgs/Photo.jpg');
+      background-blend-mode: multiply;
+      background-size: cover;
+      width: 59rem;
+      height: 56rem;
+    }
+  }
+
+  &-title {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    color: #274c5b;
+  }
+
+  &-price {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #274c5b;
+    margin-bottom: 3.2rem;
+  }
+
+  &-discount {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #b8b8b8;
+    text-decoration: line-through;
+    margin-right: 0.5rem;
+  }
+
+  &-paragraph {
+    @include paragraph(3.2rem);
+    max-width: 65rem;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    &-label {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+      color: #274c5b;
+    }
+
+    &-input {
+      display: inline-block;
+      padding: 3rem 6rem;
+      width: 4rem;
+      background: #ffffff;
+      border: 2px solid #274c5b;
+      border-radius: 16px;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    &-add {
+      @include button();
+    }
+  }
+
+  &__description {
+    text-align: center;
+    &-button {
+      @include button();
+      margin: 1.6rem 1rem;
+    }
+
+    &-paragraph {
+      @include paragraph();
+    }
+  }
+}
