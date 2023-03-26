@@ -13,6 +13,7 @@ import { useRef } from 'react';
 import Heading from '../Typography/Heading';
 import ProductPrice from '../../sections/Products/ProductPrice';
 import Paragraph from '../Typography/Paragraph';
+import Container from './Container';
 
 import Button from './Button';
 
@@ -21,7 +22,7 @@ const headingStyles = {
   fontSize: '4rem',
 };
 
-const ProductForm = () => {
+const ProductForm = props => {
   const cartCounter = useSelector(state => state.cartCounter);
 
   const productsAmount = useRef();
@@ -39,11 +40,11 @@ const ProductForm = () => {
 
   return (
     <div className={styles.product}>
-      <div className={styles.container}>
+      <Container>
         <div className={styles['product__details']}>
           <div className={styles['product__details-img']}></div>
           {/* FLEX CONTAINER */}
-          <div className={styles['product__details-info']}>
+          <div>
             <Heading style={headingStyles}>Health Pistachios</Heading>
             <Rating />
             <br />
@@ -71,6 +72,7 @@ const ProductForm = () => {
           </div>
         </div>
         <div className={styles['product__description']}>
+          {/* FLEX CONTAINER */}
           <Button>Product Description</Button>
           <Button>Additional Info</Button>
           <Paragraph>
@@ -82,7 +84,7 @@ const ProductForm = () => {
             and 80% of the carbs in raw.
           </Paragraph>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

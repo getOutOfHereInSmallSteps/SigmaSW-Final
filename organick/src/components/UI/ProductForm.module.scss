@@ -1,14 +1,10 @@
 @import '../../styles/main.scss';
 
-.container {
-  @include container();
-}
-
 .product {
   // display: none;
 
   z-index: 100;
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
@@ -28,40 +24,6 @@
       width: 59rem;
       height: 56rem;
     }
-  }
-
-  &-title {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 47px;
-    color: #274c5b;
-  }
-
-  &-price {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #274c5b;
-    margin-bottom: 3.2rem;
-  }
-
-  &-discount {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 20px;
-    color: #b8b8b8;
-    text-decoration: line-through;
-    margin-right: 0.5rem;
-  }
-
-  &-paragraph {
-    @include paragraph(3.2rem);
-    max-width: 65rem;
   }
 
   &__controls {

@@ -15,7 +15,7 @@ const headingStyles = {
 
 const Product = props => {
   return (
-    <div className={styles.product}>
+    <div className={styles.product} onClick={props.onOpenModal}>
       <ProductTag>{props.type}</ProductTag>
       <div className={styles['product-img']}></div>
       <Heading style={headingStyles}>{props.name}</Heading>

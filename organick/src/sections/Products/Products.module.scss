@@ -2,20 +2,5 @@
 
 .categories {
   margin-bottom: 20rem;
-  &-subheading {
-    @include subheading(1rem);
-    text-align: center;
-  }
-
-  &-heading {
-    @include heading(4rem);
-    text-align: center;
-  }
-
-  &__container {
-    @include container();
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
+  position: relative;
 }
