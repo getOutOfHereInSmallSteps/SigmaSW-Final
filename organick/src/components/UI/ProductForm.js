@@ -22,6 +22,16 @@ const headingStyles = {
   fontSize: '4rem',
 };
 
+const containerStyles = {
+  position: 'relative',
+};
+
+const closeBtnPosition = {
+  position: 'absolute',
+  top: 0,
+  right: 0,
+};
+
 const ProductForm = props => {
   const cartCounter = useSelector(state => state.cartCounter);
 
@@ -40,7 +50,7 @@ const ProductForm = props => {
 
   return (
     <div className={styles.product}>
-      <Container>
+      <Container style={containerStyles}>
         <div className={styles['product__details']}>
           <div className={styles['product__details-img']}></div>
           {/* FLEX CONTAINER */}
@@ -84,6 +94,7 @@ const ProductForm = props => {
             and 80% of the carbs in raw.
           </Paragraph>
         </div>
+        <Button onClick={props.onClose} style={closeBtnPosition}></Button>
       </Container>
     </div>
   );

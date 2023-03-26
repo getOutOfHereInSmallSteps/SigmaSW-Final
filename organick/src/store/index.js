@@ -1,10 +1,11 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
-const initialValue = { value: 0 };
+const initialCartCounterValue = { value: 0 };
+const initialCartState = [];
 
 const cartCounterSlice = createSlice({
   name: 'cartCounter',
-  initialState: initialValue,
+  initialState: initialCartCounterValue,
   reducers: {
     increaseCartCounter(state, action) {
       state.value += action.payload;
@@ -16,6 +17,12 @@ const cartCounterSlice = createSlice({
       state.value = 0;
     },
   },
+});
+
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState: initialCartState,
+  reducers: {},
 });
 
 const store = configureStore({

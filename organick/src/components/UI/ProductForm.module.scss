@@ -51,21 +51,9 @@
       font-weight: 700;
       font-size: 2rem;
     }
-
-    &-add {
-      @include button();
-    }
   }
 
   &__description {
     text-align: center;
-    &-button {
-      @include button();
-      margin: 1.6rem 1rem;
-    }
-
-    &-paragraph {
-      @include paragraph();
-    }
   }
 }
