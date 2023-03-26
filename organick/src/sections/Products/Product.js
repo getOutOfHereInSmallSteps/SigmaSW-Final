@@ -4,21 +4,25 @@ import styles from './Product.module.scss';
 
 import productImg from '../../imgs/broccoli.png';
 import { ReactComponent as Rating } from '../../svg/product-rating.svg';
+import ProductTag from './ProductTag';
+import Heading from '../../components/Typography/Heading';
+import ProductPrice from './ProductPrice';
+
+const headingStyles = {
+  fontSize: '2.4rem',
+  marginBottom: '1.2rem',
+};
 
 const Product = props => {
   return (
     <div className={styles.product}>
-      <p className={styles['product-tag']}>{props.type}</p>
+      <ProductTag>{props.type}</ProductTag>
       <div className={styles['product-img']}></div>
-      <h2 className={styles['product-heading']}>{props.name}</h2>
+      <Heading style={headingStyles}>{props.name}</Heading>
       <hr className={styles['product-separator']} />
+      {/* FLEX CONTAINER */}
       <p className={styles['product-parameters']}>
-        <span className={styles['price']}>
-          <span className={styles['discount']}>
-            ${(+props.price).toFixed(2)}
-          </span>
-          ${(+props.price - +props.discount).toFixed(2)}
-        </span>
+        <ProductPrice price={props.price} discount={props.discount} />
         <Rating />
       </p>
     </div>

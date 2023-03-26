@@ -1,11 +1,17 @@
 import React from 'react';
+import Container from '../../components/UI/Container';
 import Banner from './Banner';
 
-import styles from './BannerContainer.module.scss';
+const BannersSection = () => {
+  const containerStyles = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: '3.6rem',
+    marginBottom: '19rem',
+  };
 
-const BannerContainer = () => {
   return (
-    <div className={styles.banners}>
+    <Container style={containerStyles}>
       <Banner
         className="banner--1"
         heading="Get Garden Fresh Fruits"
@@ -16,8 +22,8 @@ const BannerContainer = () => {
         heading="Get 10% off on Vegetables"
         subheading="Offer!!"
       />
-    </div>
+    </Container>
   );
 };
 
-export default BannerContainer;
+export default BannersSection;

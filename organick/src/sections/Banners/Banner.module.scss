@@ -5,25 +5,11 @@
   flex-direction: column;
   justify-content: center;
   background-size: cover;
-  // width: 100rem;
-  // height: 10rem;
-  // max-width: 68rem;
   width: 68.2rem;
   height: 36rem;
-
-  &__text {
-    padding-left: 5.4rem;
-    // max-width: 27.7rem;
-    &-heading {
-      @include heading();
-      font-size: 4rem;
-      max-width: 27rem;
-    }
-
-    &-subheading {
-      @include subheading();
-    }
-  }
+  padding-left: 5.4rem;
+  border-radius: 30px;
+  box-sizing: border-box;
 
   &--1 {
     color: $color-white;

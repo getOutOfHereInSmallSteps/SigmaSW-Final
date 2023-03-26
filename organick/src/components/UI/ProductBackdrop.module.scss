@@ -1,8 +1,7 @@
 @import '../../styles/main.scss';
 
 .backdrop {
-  display: none;
-
+  // display: none;
   width: 100vw;
   height: 100vh;
   background-color: $color-white;
@@ -10,6 +9,4 @@
   position: fixed;
   top: 0;
   z-index: 10;
-  // scroll-behavior: unset;
-  // overflow: hidden;
 }

@@ -2,30 +2,35 @@ import React from 'react';
 import Heading from '../../components/Typography/Heading';
 import Subheading from '../../components/Typography/Subheading';
 import Button from '../../components/UI/Button';
+import Container from '../../components/UI/Container';
 
-import styles from './Hero.module.scss';
+import HeroContainer from './HeroContainer';
 
-const Hero = () => {
-  const headingStyles = {
-    fontSize: '7rem',
-  };
+const headingStyles = {
+  fontSize: '7rem',
+  maxWidth: '52rem',
+};
 
-  const subheadingStyles = {
-    fontSize: '3.6rem',
-  };
+const subheadingStyles = {
+  fontSize: '3.6rem',
+};
 
+const containerStyles = {
+  flex: '1',
+};
+
+const HeroSection = () => {
   return (
-    <div className={`${styles.hero}`}>
-      <div className={styles['hero__content']}>
+    <HeroContainer>
+      <Container style={containerStyles}>
         <Subheading style={subheadingStyles}>100% Natural Food</Subheading>
         <Heading style={headingStyles}>
           Choose the best healthier way of life
         </Heading>
-        <a className={styles['hero__content-button']}>Explore Now</a>
         <Button>Explore Now</Button>
-      </div>
-    </div>
+      </Container>
+    </HeroContainer>
   );
 };
 
-export default Hero;
+export default HeroSection;

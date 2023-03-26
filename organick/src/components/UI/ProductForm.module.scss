@@ -5,7 +5,7 @@
 }
 
 .product {
-  display: none;
+  // display: none;
 
   z-index: 100;
   position: fixed;
@@ -80,7 +80,7 @@
     &-input {
       display: inline-block;
       padding: 3rem 6rem;
-      width: 4rem;
+      width: 17rem;
       background: #ffffff;
       border: 2px solid #274c5b;
       border-radius: 16px;
