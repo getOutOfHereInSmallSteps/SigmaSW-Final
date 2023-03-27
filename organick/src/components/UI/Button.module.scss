@@ -20,3 +20,17 @@
     background-color: darken($color: $color-primary-blue, $amount: 7%);
   }
 }
+
+.btn--yellow {
+  background-color: $color-primary-yellow;
+  &:hover {
+    background-color: darken($color: $color-primary-yellow, $amount: 7%);
+  }
+}
+
+.btn--white {
+  background-color: $color-white;
+  &:hover {
+    background-color: darken($color: $color-white, $amount: 7%);
+  }
+}

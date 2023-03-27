@@ -6,16 +6,18 @@ import { ReactComponent as ButtonArrow } from '../../svg/button-arrow.svg';
 
 const Button = props => {
   const clickHandler = props.onClick || (e => e.preventDefault());
+  const buttonStyles = `${styles.button} ${styles[props.className]}`;
 
   return (
     <a
       href="/"
-      className={styles.button}
+      className={buttonStyles}
       onClick={clickHandler}
       style={props.style}
     >
       {props.children}
-      <ButtonArrow />
+
+      {!props.hideArrow && <ButtonArrow />}
     </a>
   );
 };

@@ -14,10 +14,16 @@ const headingStyles = {
 };
 
 const Banner = props => {
+  const bannerStyles = `${styles.banner} ${styles[`${props.className}`]}`;
+
   return (
-    <div className={`${styles.banner} ${styles[`${props.className}`]}`}>
-      <Subheading style={subheadingStyles}>{props.subheading}</Subheading>
-      <Heading style={headingStyles}>{props.heading}</Heading>
+    <div className={bannerStyles}>
+      <Subheading style={{ ...subheadingStyles, ...props.style }}>
+        {props.subheading}
+      </Subheading>
+      <Heading style={{ ...headingStyles, ...props.style }}>
+        {props.heading}
+      </Heading>
     </div>
   );
 };

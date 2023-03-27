@@ -1,4 +1,4 @@
-@import '../../styles/main.scss';
+@import '../../styles/abstracts/variables';
 
 .banner {
   display: flex;
@@ -6,13 +6,11 @@
   justify-content: center;
   background-size: cover;
   width: 68.2rem;
-  height: 36rem;
   padding-left: 5.4rem;
+  padding: 12rem 5.4rem;
   border-radius: 30px;
-  box-sizing: border-box;
 
   &--1 {
-    color: $color-white;
     background-image: url('../../imgs/banner-1.png');
   }
 

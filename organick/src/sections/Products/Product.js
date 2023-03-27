@@ -2,7 +2,6 @@ import React from 'react';
 
 import styles from './Product.module.scss';
 
-import productImg from '../../imgs/broccoli.png';
 import { ReactComponent as Rating } from '../../svg/product-rating.svg';
 import ProductTag from './ProductTag';
 import Heading from '../../components/Typography/Heading';
@@ -14,8 +13,18 @@ const headingStyles = {
 };
 
 const Product = props => {
+  // props.onSelectItem(props.id);
+  // console.log(props.id);
+
+  // console.log(props.onSelectItem);
+
+  const selectionHandler = () => {
+    props.onOpenModal();
+    // props.onSelectItem(props.id)
+    props.onSelectItem(props.id);
+  };
   return (
-    <div className={styles.product} onClick={props.onOpenModal}>
+    <div className={styles.product} onClick={selectionHandler}>
       <ProductTag>{props.type}</ProductTag>
       <div className={styles['product-img']}></div>
       <Heading style={headingStyles}>{props.name}</Heading>

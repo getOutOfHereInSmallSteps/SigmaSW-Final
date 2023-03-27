@@ -7,7 +7,8 @@ import { ReactComponent as Rating } from '../../svg/product-rating.svg';
 import { useSelector } from 'react-redux';
 
 import { useDispatch } from 'react-redux';
-import { increaseCartCounter } from '../../store';
+import { addItemToCart, increaseCartCounter } from '../../store';
+import { clearCart } from '../../store';
 
 import { useRef } from 'react';
 import Heading from '../Typography/Heading';
@@ -34,19 +35,26 @@ const closeBtnPosition = {
 
 const ProductForm = props => {
   const cartCounter = useSelector(state => state.cartCounter);
-
+  const cart = useSelector(state => state.cart);
   const productsAmount = useRef();
-
   const dispatch = useDispatch();
 
   const addToCartHandler = e => {
     e.preventDefault();
     const selectedProductAmount = +productsAmount.current.value;
     dispatch(increaseCartCounter(selectedProductAmount));
-    console.log(cartCounter);
-  };
+    const addedItem = {
+      name: props.selectedProduct.name,
+      price: props.selectedProduct.price,
+      quantity: selectedProductAmount,
+      id: props.selectedProduct.id,
+    };
 
-  console.log(cartCounter);
+    dispatch(addItemToCart(addedItem));
+    dispatch(clearCart());
+    console.log(cartCounter);
+    console.log(cart);
+  };
 
   return (
     <div className={styles.product}>
@@ -55,14 +63,17 @@ const ProductForm = props => {
           <div className={styles['product__details-img']}></div>
           {/* FLEX CONTAINER */}
           <div>
-            <Heading style={headingStyles}>Health Pistachios</Heading>
+            <Heading style={headingStyles}>
+              {props.selectedProduct.name}
+            </Heading>
             <Rating />
             <br />
-            <ProductPrice price={20} discount={7} />
+            <ProductPrice
+              price={props.selectedProduct.price}
+              discount={props.selectedProduct.discount}
+            />
             <Paragraph style={{ maxWidth: '65rem' }}>
-              Simply dummy text of the printing and typesetting industry. Lorem
-              had ceased to been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley.
+              {props.selectedProduct.overview}
             </Paragraph>
             <div className={styles['product__controls']}>
               {/* FLEX CONTAINER */}
@@ -85,14 +96,7 @@ const ProductForm = props => {
           {/* FLEX CONTAINER */}
           <Button>Product Description</Button>
           <Button>Additional Info</Button>
-          <Paragraph>
-            Welcome to the world of natural and organic. Here you can discover
-            the bounty of nature. We have grown on the principles of health,
-            ecology, and care. We aim to give our customers a healthy
-            chemical-free meal for perfect nutrition. It offers about 8-10%
-            carbs. Simple sugars — such as glucose and fructose — make up 70%
-            and 80% of the carbs in raw.
-          </Paragraph>
+          <Paragraph>{props.selectedProduct.description}</Paragraph>
         </div>
         <Button onClick={props.onClose} style={closeBtnPosition}></Button>
       </Container>

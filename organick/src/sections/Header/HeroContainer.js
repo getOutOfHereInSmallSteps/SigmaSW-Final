@@ -3,7 +3,9 @@ import React from 'react';
 import styles from './HeroContainer.module.scss';
 
 const HeroContainer = props => {
-  return <div className={styles['hero__container']}>{props.children}</div>;
+  return (
+    <header className={styles['hero__container']}>{props.children}</header>
+  );
 };
 
 export default HeroContainer;

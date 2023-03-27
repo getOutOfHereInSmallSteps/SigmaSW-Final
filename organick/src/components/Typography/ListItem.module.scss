@@ -1,0 +1,10 @@
+@import '../../styles/abstracts/variables';
+
+.list__item {
+  &-icon {
+    width: 10rem;
+    height: 10rem;
+    background-color: $color-white;
+    flex-shrink: 0;
+  }
+}

@@ -9,10 +9,12 @@ import HeroContainer from './HeroContainer';
 const headingStyles = {
   fontSize: '7rem',
   maxWidth: '52rem',
+  marginBottom: '2.4rem',
 };
 
 const subheadingStyles = {
   fontSize: '3.6rem',
+  marginBottom: '1rem',
 };
 
 const containerStyles = {
@@ -27,7 +29,7 @@ const HeroSection = () => {
         <Heading style={headingStyles}>
           Choose the best healthier way of life
         </Heading>
-        <Button>Explore Now</Button>
+        <Button className="btn--yellow">Explore Now</Button>
       </Container>
     </HeroContainer>
   );
