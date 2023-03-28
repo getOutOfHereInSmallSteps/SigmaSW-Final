@@ -23,7 +23,7 @@ const Nav = () => {
       <Logo />
 
       <ul className={styles['nav__links']}>
-        <NavLink>Home</NavLink>
+        <NavLink to="/">Home</NavLink>
         <NavLink>About</NavLink>
         <NavLink>
           Pages <DownArrow />

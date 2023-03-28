@@ -10,6 +10,9 @@ import Container from '../../components/UI/Container';
 import List from '../../components/Typography/List';
 import ListItem from '../../components/Typography/ListItem';
 
+import { ReactComponent as BowlIcon } from '../../svg/bowl.svg';
+import { ReactComponent as MailboxIcon } from '../../svg/mailbox.svg';
+
 const containerStyles = {
   display: 'flex',
   alignItems: 'center',
@@ -52,11 +55,15 @@ const AboutSection = () => {
           </Paragraph>
 
           <List style={listStyle}>
-            <ListItem heading="Organic Food Only" style={listItemStyles}>
+            <ListItem
+              heading="Organic Food Only"
+              icon={<MailboxIcon />}
+              style={listItemStyles}
+            >
               Simply dummy text of the printing and typesetting industry. Lorem
               Ipsum
             </ListItem>
-            <ListItem heading="Quality Standarts">
+            <ListItem heading="Quality Standarts" icon={<BowlIcon />}>
               Simply dummy text of the printing and typesetting industry. Lorem
               Ipsum
             </ListItem>

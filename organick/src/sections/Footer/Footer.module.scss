@@ -1,0 +1,29 @@
+@import '../../styles/abstracts/variables';
+
+.footer {
+  padding-top: 10rem;
+  &__column-logo {
+    align-items: center;
+    text-align: center;
+    max-width: 63rem;
+    padding: 0 4rem;
+    border-left: 1px solid #d5d5d5;
+    border-right: 1px solid #d5d5d5;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-primary-green-tint;
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+    }
+  }
+}

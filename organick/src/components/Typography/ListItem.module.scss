@@ -6,5 +6,9 @@
     height: 10rem;
     background-color: $color-white;
     flex-shrink: 0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

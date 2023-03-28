@@ -1,0 +1,17 @@
+@import '../../styles/abstracts/variables';
+
+.contact {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-end;
+  &-label {
+    font-weight: 700;
+  }
+  &-link {
+    font-weight: 400;
+    color: $color-paragraph-gray;
+  }
+}

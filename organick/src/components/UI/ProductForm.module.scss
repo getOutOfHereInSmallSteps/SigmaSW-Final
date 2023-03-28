@@ -1,8 +1,6 @@
-@import '../../styles/main.scss';
+@import '../../styles/abstracts/variables';
 
 .product {
-  // display: none;
-
   z-index: 100;
   position: absolute;
   top: 50%;
@@ -10,7 +8,6 @@
   width: 100%;
   padding: 11.5rem 0rem 14rem;
   background-color: #fffafa;
-
   &__details {
     display: flex;
     align-items: center;
@@ -18,14 +15,14 @@
     margin-bottom: 9rem;
     &-img {
       background-color: $color-background-light-gray;
-      background-image: url('../../imgs/Photo.jpg');
       background-blend-mode: multiply;
       background-size: cover;
       width: 59rem;
       height: 56rem;
+      padding: 3.6rem;
+      border-radius: 30px;
     }
   }
-
   &__controls {
     display: flex;
     gap: 2rem;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Nav from '../components/Nav/Nav';
+import Footer from '../sections/Footer/Footer';
 
 const RootLayout = () => {
   return (
@@ -10,6 +11,7 @@ const RootLayout = () => {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </React.Fragment>
   );
 };
