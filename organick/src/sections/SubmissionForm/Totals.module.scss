@@ -1,0 +1,13 @@
+.total {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4.6rem;
+  &__param {
+    display: flex;
+    // justify-content: space-between;
+    gap: 3.2rem;
+    justify-self: flex-end;
+    align-self: flex-end;
+  }
+}

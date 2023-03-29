@@ -1,0 +1,41 @@
+@import '../../styles/abstracts/variables';
+
+.label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  &-message {
+    margin-right: 2rem;
+  }
+
+  &-error {
+    color: #f03e3e;
+    font-weight: 800;
+  }
+}
+
+.input {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #ababab;
+  background: $color-white;
+  border: 1px solid $color-primary-green;
+  border-radius: 16px;
+  padding: 3rem;
+
+  &-error {
+    background-color: #fff5f5;
+    border: 1px solid #f03e3e;
+  }
+}
+
+.textarea {
+  height: 20rem;
+}

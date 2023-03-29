@@ -1,23 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SubmissionBanner from '../sections/SubmissionForm/SubmissionBanner';
 import SubmissionContainer from '../sections/SubmissionForm/SubmissionContainer';
 import CartProduct from '../sections/SubmissionForm/CartProduct';
+import TotalPrice from '../sections/SubmissionForm/TotalPrice';
+import Button from '../components/UI/Button';
+import SubmissionForm from '../sections/SubmissionForm/SubmissionForm';
+import Heading from '../components/Typography/Heading';
+
+import { useSelector } from 'react-redux';
 
 const FormPage = () => {
-  // <FormBanner />
-  // <SubmitionContainer>
-  //   <Container>
-  // <SelectedProducts></SelectedProducts>;
-  // <SubmitionForm></SubmitionForm>
-  // </Container>
-  // </SubmitionContainer>
+  const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
+
+  const cart = useSelector(state => state.cart.products);
+  // const cartCounter = useSelector(state => state.cart.productsQuantity)
+  // const cartCounter = useSelector(state => state.cartCounter.value);
+  // console.log(cartCounter);
+
+  console.log(cart);
+
+  const orderConfirmHandler = e => {
+    e.preventDefault();
+    setIsOrderConfirmed(true);
+  };
+
+  const prices = cart.reduce(
+    (acc, curr) => {
+      acc.totalDiscount += +curr.discount * curr.quantity;
+      acc.totalPrice += (+curr.price - +curr.discount) * curr.quantity;
+
+      return acc;
+    },
+    { totalPrice: 0, totalDiscount: 0 }
+  );
 
   return (
     <React.Fragment>
       <SubmissionBanner />
       <SubmissionContainer>
-        <CartProduct />
+        {cart.map(cartItem => (
+          <CartProduct
+            name={cartItem.name}
+            price={cartItem.price}
+            discount={cartItem.discount}
+            quantity={cartItem.quantity}
+            id={cartItem.id}
+            key={cartItem.id}
+          />
+        ))}
+        {cart.length !== 0 ? (
+          <TotalPrice
+            price={prices.totalPrice}
+            discount={prices.totalDiscount}
+          />
+        ) : (
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Heading>No Products Found</Heading>
+          </div>
+        )}
+
+        {!isOrderConfirmed && cart.length !== 0 && (
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button onClick={orderConfirmHandler}>To order</Button>
+          </div>
+        )}
+        {isOrderConfirmed && <SubmissionForm />}
       </SubmissionContainer>
     </React.Fragment>
   );

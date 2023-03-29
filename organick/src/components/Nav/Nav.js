@@ -16,7 +16,9 @@ import { ReactComponent as CartIcon } from '../../svg/cart-icon.svg';
 import FlexContainer from '../UI/FlexContainer';
 
 const Nav = () => {
-  const cartCounter = useSelector(state => state.cartCounter);
+  const cartCounter = useSelector(state => state.cart.productsQuantity);
+
+  console.log(cartCounter);
 
   return (
     <nav className={styles.nav}>
@@ -24,13 +26,13 @@ const Nav = () => {
 
       <ul className={styles['nav__links']}>
         <NavLink to="/">Home</NavLink>
-        <NavLink>About</NavLink>
+        <NavLink to="about">About</NavLink>
         <NavLink>
           Pages <DownArrow />
         </NavLink>
-        <NavLink>Shop</NavLink>
-        <NavLink>Projects</NavLink>
-        <NavLink>News</NavLink>
+        <NavLink to="shop">Shop</NavLink>
+        <NavLink to="projects">Projects</NavLink>
+        <NavLink to="news">News</NavLink>
       </ul>
 
       <FlexContainer>
@@ -46,7 +48,7 @@ const Nav = () => {
           </Link>
           <Heading
             style={{ fontSize: '1.8rem' }}
-          >{`Cart (${cartCounter.value})`}</Heading>
+          >{`Cart (${cartCounter})`}</Heading>
         </div>
       </FlexContainer>
     </nav>

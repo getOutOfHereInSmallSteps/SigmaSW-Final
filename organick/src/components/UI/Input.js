@@ -18,7 +18,9 @@ const Input = React.forwardRef((props, ref) => {
         value={props.inputQuantity}
         onChange={props.inputChangeHandler}
       />
-      <Button onClick={props.addToCartHandler}>Add To Cart</Button>
+      <Button hideArrow={props.hideButtonArrow} onClick={props.onClick}>
+        {props.buttonText}
+      </Button>
     </div>
   );
 });

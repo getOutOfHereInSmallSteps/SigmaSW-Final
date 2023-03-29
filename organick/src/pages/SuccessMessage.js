@@ -1,13 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Heading from '../components/Typography/Heading';
+import SuccessBanner from '../sections/Success/SuccessBanner';
 
 const SuccessMessagePage = () => {
   return (
     <React.Fragment>
-      <Heading>Success of Validation!</Heading>;<Link to="/">Go Back</Link>
-      <Link to="error">Error</Link>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Heading style={{ marginBottom: '4.2rem', marginTop: '9.6rem' }}>
+          Thank you for your order
+        </Heading>
+      </div>
+      <SuccessBanner />
     </React.Fragment>
   );
 };

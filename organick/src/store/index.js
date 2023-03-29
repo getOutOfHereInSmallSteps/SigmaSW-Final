@@ -1,7 +1,6 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
-const initialCartCounterValue = { value: 0 };
-const initialCartState = [];
+const initialCartState = { products: [], productsQuantity: 0 };
 
 /*
 const initialCartState = [
@@ -16,58 +15,49 @@ const initialCartState = [
 
 */
 
-const cartCounterSlice = createSlice({
-  name: 'cartCounter',
-  initialState: initialCartCounterValue,
-  reducers: {
-    increaseCartCounter(state, action) {
-      state.value += action.payload;
-    },
-    decreaseCartCounter(state, action) {
-      state.value -= action.payload;
-    },
-    clearCartCounter(state) {
-      state.value = 0;
-    },
-  },
-});
-
 const cartSlice = createSlice({
   name: 'cart',
   initialState: initialCartState,
   reducers: {
     addItemToCart(state, action) {
-      const itemIndex = state.findIndex(item => item.id === action.payload.id);
-      console.log(itemIndex);
-      console.log(!-1);
+      const itemIndex = state.products.findIndex(
+        item => item.id === action.payload.id
+      );
+      state.productsQuantity += action.payload.quantity;
       if (itemIndex === -1) {
-        state.push(action.payload);
+        state.products.push(action.payload);
       } else {
-        state[itemIndex].quantity += action.payload.quantity;
+        state.products[itemIndex].quantity += action.payload.quantity;
       }
     },
     removeItemFromCart(state, action) {
-      state.filter(item => item.id !== action.payload.id);
+      state.productsQuantity -= action.payload.quantity;
+      state.products = state.products.filter(
+        item => item.id !== action.payload.id
+      );
     },
     setCartItemQuantity(state, action) {
-      const itemIndex = state.filter(item => item.id === action.payload.id);
-      state[itemIndex].quantity = action.payload.quantity;
+      const itemIndex = state.products.findIndex(
+        item => item.id === action.payload.id
+      );
+      state.products[itemIndex].quantity = action.payload.quantity;
+      state.productsQuantity = state.products.reduce(
+        (acc, cur) => (acc += cur.quantity),
+        0
+      );
     },
-    clearCart(state, action) {
-      state = action.payload;
+    clearCart(state) {
+      state.products = [];
+      state.productsQuantity = 0;
     },
   },
 });
 
 const store = configureStore({
   reducer: {
-    cartCounter: cartCounterSlice.reducer,
     cart: cartSlice.reducer,
   },
 });
-
-export const { increaseCartCounter, decreaseCartCounter, clearCartCounter } =
-  cartCounterSlice.actions;
 
 export const {
   addItemToCart,

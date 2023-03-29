@@ -1,11 +1,5 @@
 import './styles/main.scss';
 
-import AboutSection from './sections/About/AboutSection';
-import Products from './sections/Products/Products';
-import Offers from './sections/Offers/Offers';
-import BannersSection from './sections/Banners/BannersSection';
-import Nav from './components/Nav/Nav';
-import HeroSection from './sections/Header/HeroSection';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './pages/Root';
 import HomePage from './pages/Home';
@@ -35,18 +29,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <Nav />
-//       <HeroSection />
-//       <BannersSection />
-//       <AboutSection />
-//       <Products />
-//       <Offers />
-//     </div>
-//   );
-// }
 function App() {
   return <RouterProvider router={router} />;
 }

@@ -5,9 +5,10 @@ import styles from './ProductForm.module.scss';
 import { ReactComponent as Rating } from '../../svg/product-rating.svg';
 
 import { useDispatch } from 'react-redux';
-import { addItemToCart, increaseCartCounter } from '../../store';
+import { addItemToCart } from '../../store';
 
 import { useRef } from 'react';
+
 import Heading from '../Typography/Heading';
 import ProductPrice from '../../sections/Products/ProductPrice';
 import Paragraph from '../Typography/Paragraph';
@@ -45,7 +46,7 @@ const ProductForm = props => {
   const addToCartHandler = e => {
     e.preventDefault();
     const selectedProductAmount = +productsAmount.current.value;
-    dispatch(increaseCartCounter(selectedProductAmount));
+    // dispatch(increaseCartCounter(selectedProductAmount));
 
     const addedItem = {
       name: props.selectedProduct.name,
@@ -53,6 +54,7 @@ const ProductForm = props => {
       quantity: selectedProductAmount,
       id: props.selectedProduct.id,
       link: props.selectedProduct.link,
+      discount: props.selectedProduct.discount,
     };
 
     dispatch(addItemToCart(addedItem));
@@ -91,10 +93,12 @@ const ProductForm = props => {
               {props.selectedProduct.overview}
             </Paragraph>
             <Input
-              addToCartHandler={addToCartHandler}
+              onClick={addToCartHandler}
               inputQuantity={inputQuantity}
               inputChangeHandler={inputChangeHandler}
               ref={productsAmount}
+              buttonText={'Add To Cart'}
+              hideButtonArrow={false}
             />
           </div>
         </div>
