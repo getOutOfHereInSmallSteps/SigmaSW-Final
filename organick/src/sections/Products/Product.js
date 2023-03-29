@@ -26,8 +26,8 @@ const Product = props => {
   };
 
   const productImgBackground = {
-    // backgroundImage: `url(${props.link})`,
-    backgroundImage: `url(${brocolliImg})`,
+    backgroundImage: `url(${props.link})`,
+    // backgroundImage: `url(${brocolliImg})`,
   };
 
   return (

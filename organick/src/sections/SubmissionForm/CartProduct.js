@@ -6,11 +6,7 @@ import Heading from '../../components/Typography/Heading';
 import ProductPrice from '../../sections/Products/ProductPrice';
 import Input from '../../components/UI/Input';
 import { useDispatch } from 'react-redux';
-import {
-  removeItemFromCart,
-  decreaseCartCounter,
-  setCartItemQuantity,
-} from '../../store';
+import { removeItemFromCart, setCartItemQuantity } from '../../store';
 
 const headingStyles = {
   fontSize: '3.6rem',
@@ -24,12 +20,9 @@ const CartProduct = props => {
   const removeFromCartHandler = e => {
     e.preventDefault();
     dispatch(removeItemFromCart({ id: props.id, quantity: props.quantity }));
-    // dispatch(decreaseCartCounter(props.quantity));
   };
 
   const inputChangeHandler = e => {
-    // setItemQuantity()
-    // console.log(e.target.value);
     setItemQuantity(+e.target.value);
     dispatch(setCartItemQuantity({ quantity: +e.target.value, id: props.id }));
   };
