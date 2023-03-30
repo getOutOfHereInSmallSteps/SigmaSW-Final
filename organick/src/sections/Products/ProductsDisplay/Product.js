@@ -2,13 +2,11 @@ import React from 'react';
 
 import styles from './Product.module.scss';
 
-import { ReactComponent as Rating } from '../../svg/product-rating.svg';
-import ProductTag from './ProductTag';
-import Heading from '../../components/Typography/Heading';
-import ProductPrice from './ProductPrice';
-import Flex from '../../components/UI/Flex';
-
-import brocolliImg from '../../imgs/broccoli.png';
+import { ReactComponent as Rating } from '../../../svg/product-rating.svg';
+import ProductTag from '../ProductTag';
+import Heading from '../../../components/Typography/Heading';
+import ProductPrice from '../ProductPrice';
+import Flex from '../../../components/UI/Flex';
 
 const headingStyles = {
   fontSize: '2.4rem',
@@ -27,7 +25,6 @@ const Product = props => {
 
   const productImgBackground = {
     backgroundImage: `url(${props.link})`,
-    // backgroundImage: `url(${brocolliImg})`,
   };
 
   return (

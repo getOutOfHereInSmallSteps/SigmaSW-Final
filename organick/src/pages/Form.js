@@ -12,13 +12,7 @@ import { useSelector } from 'react-redux';
 
 const FormPage = () => {
   const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
-
   const cart = useSelector(state => state.cart.products);
-  // const cartCounter = useSelector(state => state.cart.productsQuantity)
-  // const cartCounter = useSelector(state => state.cartCounter.value);
-  // console.log(cartCounter);
-
-  console.log(cart);
 
   const orderConfirmHandler = e => {
     e.preventDefault();

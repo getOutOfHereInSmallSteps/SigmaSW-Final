@@ -1,19 +1,19 @@
 import React from 'react';
 
-import Heading from '../../components/Typography/Heading';
-import Subheading from '../../components/Typography/Subheading';
-import Container from '../../components/UI/Container';
-import ProductBackdrop from '../../components/UI/ProductBackdrop';
-import ProductForm from '../../components/UI/ProductForm';
+import Heading from '../../../components/Typography/Heading';
+import Subheading from '../../../components/Typography/Subheading';
+import Container from '../../../components/UI/Container';
+import ProductBackdrop from '../ProductsForm/ProductBackdrop';
+import ProductForm from '../ProductsForm/ProductForm';
 import Product from './Product';
-import Button from '../../components/UI/Button';
+import Button from '../../../components/UI/Button';
 
-import styles from './Products.module.scss';
+import styles from './ProductsDisplay.module.scss';
 
 import { useState, useEffect } from 'react';
 
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase/firebase';
+import { db } from '../../../firebase/firebase';
 
 const subheadingStyles = {
   textAlign: 'center',
@@ -31,7 +31,7 @@ const containerStyles = {
   marginBottom: '4.8rem',
 };
 
-const Products = () => {
+const ProductsDisplay = () => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
   const [productsData, setProductsData] = useState([]);
@@ -66,9 +66,6 @@ const Products = () => {
 
   const productsPageOne = productsData.slice(0, productsData.length / 2);
   const productsPageTwo = productsData.slice([productsData.length / 2]);
-
-  console.log(productsPageOne);
-  console.log(productsPageTwo);
 
   const toggleShowMoreHandler = e => {
     e.preventDefault();
@@ -129,4 +126,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsDisplay;

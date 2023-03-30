@@ -2,19 +2,6 @@ import { configureStore, createSlice } from '@reduxjs/toolkit';
 
 const initialCartState = { products: [], productsQuantity: 0 };
 
-/*
-const initialCartState = [
-  {
-    name: 'Health Pustachios',
-    price: 20,
-    discount: 7,
-    quantity: 2,
-    id: p2,
-  },
-];
-
-*/
-
 const cartSlice = createSlice({
   name: 'cart',
   initialState: initialCartState,

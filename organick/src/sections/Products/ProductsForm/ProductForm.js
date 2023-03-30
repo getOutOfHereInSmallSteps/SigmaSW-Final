@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 
 import styles from './ProductForm.module.scss';
 
-import { ReactComponent as Rating } from '../../svg/product-rating.svg';
+import { ReactComponent as Rating } from '../../../svg/product-rating.svg';
 
 import { useDispatch } from 'react-redux';
-import { addItemToCart } from '../../store';
+import { addItemToCart } from '../../../store';
 
 import { useRef } from 'react';
 
-import Heading from '../Typography/Heading';
-import ProductPrice from '../../sections/Products/ProductPrice';
-import Paragraph from '../Typography/Paragraph';
-import Container from './Container';
-import Flex from './Flex';
-import Button from './Button';
-import ProductTag from '../../sections/Products/ProductTag';
-import Input from '../UI/Input';
+import Heading from '../../../components/Typography/Heading';
+import ProductPrice from '../ProductPrice';
+import Paragraph from '../../../components/Typography/Paragraph';
+import Container from '../../../components/UI/Container';
+import Flex from '../../../components/UI/Flex';
+import Button from '../../../components/UI/Button';
+import ProductTag from '../ProductTag';
+import Input from '../../../components/UI/Input';
 
 const headingStyles = {
   fontWeight: '600',

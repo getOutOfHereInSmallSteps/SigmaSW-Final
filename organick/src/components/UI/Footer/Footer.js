@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 
-import Logo from '../../components/Typography/Logo';
+import Logo from '../../Typography/Logo';
 
-import Heading from '../../components/Typography/Heading';
-import Paragraph from '../../components/Typography/Paragraph';
-import FlexContainer from '../../components/UI/FlexContainer';
+import Heading from '../../Typography/Heading';
+import Paragraph from '../../Typography/Paragraph';
+import FlexContainer from '../FlexContainer';
 import ContactUs from './ContactItem';
 import FooterColumn from './FooterColumn';
 
-import { ReactComponent as InstagramLogo } from '../../svg/Instagram.svg';
-import { ReactComponent as FacebookLogo } from '../../svg/Facebook.svg';
-import { ReactComponent as TwitterLogo } from '../../svg/Twitter.svg';
-import { ReactComponent as PinterestLogo } from '../../svg/Pinterest.svg';
+import { ReactComponent as InstagramLogo } from '../../../svg/Instagram.svg';
+import { ReactComponent as FacebookLogo } from '../../../svg/Facebook.svg';
+import { ReactComponent as TwitterLogo } from '../../../svg/Twitter.svg';
+import { ReactComponent as PinterestLogo } from '../../../svg/Pinterest.svg';
 
 const flexContainerStyles = {
   maxWidth: '120rem',

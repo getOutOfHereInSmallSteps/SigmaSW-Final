@@ -2,23 +2,21 @@ import React from 'react';
 
 import styles from './Nav.module.scss';
 
-import Logo from '../Typography/Logo';
-import Heading from '../Typography/Heading';
+import Logo from '../../Typography/Logo';
+import Heading from '../../Typography/Heading';
 
 import { Link, NavLink } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
-import { ReactComponent as DownArrow } from '../../svg/arrow-down.svg';
-import { ReactComponent as SearchIcon } from '../../svg/search-icon.svg';
-import { ReactComponent as CartIcon } from '../../svg/cart-icon.svg';
+import { ReactComponent as DownArrow } from '../../../svg/arrow-down.svg';
+import { ReactComponent as SearchIcon } from '../../../svg/search-icon.svg';
+import { ReactComponent as CartIcon } from '../../../svg/cart-icon.svg';
 
-import FlexContainer from '../UI/FlexContainer';
+import FlexContainer from '../FlexContainer';
 
 const Nav = () => {
   const cartCounter = useSelector(state => state.cart.productsQuantity);
-
-  console.log(cartCounter);
 
   return (
     <nav className={styles.nav}>

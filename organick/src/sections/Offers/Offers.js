@@ -1,5 +1,6 @@
 import React from 'react';
-import Product from '../Products/Product';
+// import Product from '../Products/Product';
+import Product from '../Products/ProductsDisplay/Product';
 
 import styles from './Offers.module.scss';
 

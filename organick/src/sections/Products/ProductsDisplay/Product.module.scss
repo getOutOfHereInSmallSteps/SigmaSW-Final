@@ -1,4 +1,4 @@
-@import '../../styles/abstracts/variables';
+@import '../../../styles/abstracts/variables';
 
 .product {
   display: flex;
@@ -11,7 +11,8 @@
   cursor: pointer;
 
   &-img {
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     background-color: $color-background-light-gray;
     background-blend-mode: multiply;

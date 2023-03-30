@@ -3,7 +3,7 @@ import AboutSection from '../sections/About/AboutSection';
 import BannersSection from '../sections/Banners/BannersSection';
 import HeroSection from '../sections/Header/HeroSection';
 import Offers from '../sections/Offers/Offers';
-import Products from '../sections/Products/Products';
+import ProductsDisplay from '../sections/Products/ProductsDisplay/ProductsDisplay';
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
       <HeroSection />
       <BannersSection />
       <AboutSection />
-      <Products />
+      <ProductsDisplay />
       <Offers />
     </React.Fragment>
   );
