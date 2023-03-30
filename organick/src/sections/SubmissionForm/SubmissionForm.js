@@ -63,7 +63,7 @@ const SubmissionForm = () => {
     if (!formIsValid) return;
 
     dispatch(clearCart());
-    // dispatch(clearCartCounter());
+
     navigate('/form/success');
     resetNameInput();
     resetAddressInput();
