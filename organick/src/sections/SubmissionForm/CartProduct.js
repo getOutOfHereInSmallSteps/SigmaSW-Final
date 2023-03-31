@@ -21,10 +21,17 @@ const CartProduct = props => {
     dispatch(setCartItemQuantity({ quantity: +e.target.value, id: props.id }));
   };
 
+  const cartProductImage = {
+    backgroundImage: `url(${props.link})`,
+  };
+
   return (
     <div className="flex items-center justify-between pb-[4.2rem]">
       <div className="flex items-center gap-4">
-        <div className="rounded-[20px] w-[20rem] h-[20rem] bg-cover bg-blend-multiply"></div>
+        <div
+          style={cartProductImage}
+          className={`rounded-[20px] w-[20rem] h-[20rem] bg-cover bg-blend-multiply`}
+        ></div>
         <Heading className="text-[3.6rem]">{props.name}</Heading>
         <ProductPrice price={props.price} discount={props.discount} />
       </div>

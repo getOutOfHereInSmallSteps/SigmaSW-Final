@@ -41,6 +41,7 @@ const FormPage = () => {
             quantity={cartItem.quantity}
             id={cartItem.id}
             key={cartItem.id}
+            link={cartItem.link}
           />
         ))}
         {cart.length !== 0 ? (
