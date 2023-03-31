@@ -2,18 +2,16 @@ import React from 'react';
 
 import Button from '../UI/Button';
 
-import styles from './Input.module.scss';
-
 const Input = React.forwardRef((props, ref) => {
   return (
-    <div className={styles['product__controls']}>
-      <label className={styles['product__controls-label']}>Quantity :</label>
+    <div className="flex gap-[2rem] items-center">
+      <label className="font-roboto font-bold text-[2rem]">Quantity :</label>
       <input
         type="number"
         min={0}
         max={99}
         step={1}
-        className={styles['product__controls-input']}
+        className="inline-block py-[3rem] px-[6rem] w-[17rem] bg-color-white border-solid border-2 border-color-primary-blue rounded-[16px] font-roboto font-bold text-[2rem]"
         ref={ref}
         value={props.inputQuantity}
         onChange={props.inputChangeHandler}

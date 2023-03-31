@@ -1,9 +1,11 @@
 import React from 'react';
 
-import styles from './ProductTag.module.scss';
-
 const ProductTag = props => {
-  return <p className={styles['product-tag']}>{props.children}</p>;
+  return (
+    <p className="grow-0 shrink-1 py-[0.6rem] px-[1.2rem] font-opensans font-semibold text-[1.6rem] text-center text-color-white bg-color-primary-blue inline w-min rounded-[8px] capitalize">
+      {props.children}
+    </p>
+  );
 };
 
 export default ProductTag;

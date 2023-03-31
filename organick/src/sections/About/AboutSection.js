@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styles from './AboutSection.module.scss';
-import aboutImg from '../../imgs/about.png';
 import Subheading from '../../components/Typography/Subheading';
 import Button from '../../components/UI/Button';
 import Heading from '../../components/Typography/Heading';
@@ -10,55 +8,32 @@ import Container from '../../components/UI/Container';
 import List from '../../components/Typography/List';
 import ListItem from '../../components/Typography/ListItem';
 
+import aboutImg from '../../imgs/about.png';
+
 import { ReactComponent as BowlIcon } from '../../svg/bowl.svg';
 import { ReactComponent as MailboxIcon } from '../../svg/mailbox.svg';
 
-const containerStyles = {
-  display: 'flex',
-  alignItems: 'center',
-};
-
-const headingStyles = {
-  marginBottom: '1.6rem',
-};
-
-const subheadingStyles = {
-  marginBottom: '1rem',
-};
-
-const paragraphStyles = {
-  marginBottom: '4.2rem',
-};
-
-const listStyle = {
-  marginBottom: '4.2rem',
-};
-
-const listItemStyles = {
-  marginBottom: '3.2rem',
-};
-
 const AboutSection = () => {
   return (
-    <div className={styles.about}>
-      <Container style={containerStyles}>
+    <div className="bg-color-background-light-gray py-[20rem] mb-[18rem]">
+      <Container className="flex items-center">
         <img src={aboutImg} alt="" />
         <div>
-          <Subheading style={subheadingStyles}>About Us</Subheading>
-          <Heading style={headingStyles}>
+          <Subheading>About Us</Subheading>
+          <Heading className="mb-[1.6rem] text-[5rem]">
             We Believe in Working Accredited Farmers
           </Heading>
-          <Paragraph style={paragraphStyles}>
+          <Paragraph className="mb-[4.2rem]">
             Simply dummy text of the printing and typesetting industry. Lorem
             had ceased to been the industry's standard dummy text ever since the
             1500s, when an unknown printer took a galley.
           </Paragraph>
 
-          <List style={listStyle}>
+          <List className="mb-[4.2rem]">
             <ListItem
               heading="Organic Food Only"
               icon={<MailboxIcon />}
-              style={listItemStyles}
+              className="mb-[3.2rem]"
             >
               Simply dummy text of the printing and typesetting industry. Lorem
               Ipsum

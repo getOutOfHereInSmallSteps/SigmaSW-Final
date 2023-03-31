@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 
-import styles from './CartProduct.module.scss';
-
 import Heading from '../../components/Typography/Heading';
 import ProductPrice from '../../sections/Products/ProductPrice';
 import Input from '../../components/UI/Input';
 import { useDispatch } from 'react-redux';
 import { removeItemFromCart, setCartItemQuantity } from '../../store';
-
-const headingStyles = {
-  fontSize: '3.6rem',
-};
 
 const CartProduct = props => {
   const [itemQuantity, setItemQuantity] = useState(props.quantity);
@@ -28,10 +22,10 @@ const CartProduct = props => {
   };
 
   return (
-    <div className={styles['cart-product']}>
-      <div className={styles['cart-product__info']}>
-        <div className={styles['cart-product__img']}></div>
-        <Heading style={headingStyles}>{props.name}</Heading>
+    <div className="flex items-center justify-between pb-[4.2rem]">
+      <div className="flex items-center gap-4">
+        <div className="rounded-[20px] w-[20rem] h-[20rem] bg-cover bg-blend-multiply"></div>
+        <Heading className="text-[3.6rem]">{props.name}</Heading>
         <ProductPrice price={props.price} discount={props.discount} />
       </div>
       <Input

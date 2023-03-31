@@ -1,16 +1,14 @@
 import React from 'react';
 import Heading from '../../components/Typography/Heading';
 
-import styles from './Totals.module.scss';
-
 const TotalPrice = props => {
   return (
-    <div className={styles.total}>
-      <div className={styles['total__param']}>
+    <div className="flex flex-col gap-[2rem] mb-[4.6rem]">
+      <div className="flex gap-[3.2rem] justify-self-end self-end">
         <Heading>Total Cost</Heading>
         <Heading>{props.price}$</Heading>
       </div>
-      <div className={styles['total__param']}>
+      <div className="flex gap-[3.2rem] justify-self-end self-end">
         <Heading>Discount</Heading>
         <Heading>{props.discount}$</Heading>
       </div>

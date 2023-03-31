@@ -2,28 +2,15 @@ import React from 'react';
 import Heading from '../../components/Typography/Heading';
 import Subheading from '../../components/Typography/Subheading';
 
-import styles from './Banner.module.scss';
-
-const subheadingStyles = {
-  fontSize: '3.6rem',
-};
-
-const headingStyles = {
-  fontSize: '4rem',
-  maxWidth: '27rem',
-};
-
 const Banner = props => {
-  const bannerStyles = `${styles.banner} ${styles[`${props.className}`]}`;
+  // const bannerStyles = `${styles.banner} ${styles[`${props.className}`]}`;
 
   return (
-    <div className={bannerStyles}>
-      <Subheading style={{ ...subheadingStyles, ...props.style }}>
-        {props.subheading}
-      </Subheading>
-      <Heading style={{ ...headingStyles, ...props.style }}>
-        {props.heading}
-      </Heading>
+    <div
+      className={`flex flex-col justify-center bg-cover w-[68rem] py-[12rem] px-[5.4rem] rounded-[30px] ${props.className}`}
+    >
+      <Subheading className="text-[3.6rem]">{props.subheading}</Subheading>
+      <Heading className="text-[4rem] max-w-[27rem]">{props.heading}</Heading>
     </div>
   );
 };

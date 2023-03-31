@@ -1,4 +1,5 @@
 import React from 'react';
+
 import inptStyles from './FormInput.module.scss';
 
 export const Input = props => {

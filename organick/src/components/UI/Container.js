@@ -1,10 +1,8 @@
 import React from 'react';
 
-import styles from './Container.module.scss';
-
 const Container = props => {
   return (
-    <div className={styles.container} style={props.style}>
+    <div className={`max-w-[150rem] px-[5rem] mx-auto ${props.className}`}>
       {props.children}
     </div>
   );

@@ -1,10 +1,8 @@
 import React from 'react';
 
-import styles from './Flex.module.scss';
-
 const Flex = props => {
   return (
-    <div style={props.style} className={styles.flex}>
+    <div className={`flex items-center justify-center ${props.className}`}>
       {props.children}
     </div>
   );

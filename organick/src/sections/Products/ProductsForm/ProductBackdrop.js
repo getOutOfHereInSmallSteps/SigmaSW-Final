@@ -1,9 +1,12 @@
 import React from 'react';
 
-import styles from './ProductBackdrop.module.scss';
-
 const ProductBackdrop = props => {
-  return <div className={styles.backdrop} onClick={props.onClose}></div>;
+  return (
+    <div
+      className="w-full h-full bg-color-white opacity-50 absolute top-0 z-10"
+      onClick={props.onClose}
+    ></div>
+  );
 };
 
 export default ProductBackdrop;

@@ -1,10 +1,12 @@
 import React from 'react';
 
-import styles from './HeroContainer.module.scss';
-
 const HeroContainer = props => {
   return (
-    <header className={styles['hero__container']}>{props.children}</header>
+    <header
+      className={`bg-[url('./imgs/hero-background.png')] bg-cover bg-no-repeat h-[85vh] w-full flex items-center justify-center mb-64`}
+    >
+      {props.children}
+    </header>
   );
 };
 

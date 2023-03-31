@@ -4,19 +4,11 @@ import Heading from './Heading';
 
 import { ReactComponent as OrganickLogo } from '../../svg/Logo.svg';
 
-const logoHeadingStyles = {
-  fontSize: '3.8rem',
-};
-
-const logoContainerStyles = {
-  gap: '1rem',
-};
-
 const Logo = () => {
   return (
-    <FlexContainer style={logoContainerStyles}>
+    <FlexContainer className="gap-4">
       <OrganickLogo />
-      <Heading style={logoHeadingStyles}>Organick</Heading>
+      <Heading className="text-[3.8rem]">Organick</Heading>
     </FlexContainer>
   );
 };

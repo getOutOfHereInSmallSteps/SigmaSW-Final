@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import styles from './ProductForm.module.scss';
-
 import { ReactComponent as Rating } from '../../../svg/product-rating.svg';
 
 import { useDispatch } from 'react-redux';
@@ -18,25 +16,6 @@ import Button from '../../../components/UI/Button';
 import ProductTag from '../ProductTag';
 import Input from '../../../components/UI/Input';
 
-const headingStyles = {
-  fontWeight: '600',
-  fontSize: '4rem',
-};
-
-const containerStyles = {
-  position: 'relative',
-};
-
-const closeBtnPosition = {
-  position: 'absolute',
-  top: 0,
-  right: 0,
-};
-
-const flexStyles = {
-  gap: '2.4rem',
-};
-
 const ProductForm = props => {
   const [inputQuantity, setInputQuantity] = useState(1);
   const dispatch = useDispatch();
@@ -46,7 +25,6 @@ const ProductForm = props => {
   const addToCartHandler = e => {
     e.preventDefault();
     const selectedProductAmount = +productsAmount.current.value;
-    // dispatch(increaseCartCounter(selectedProductAmount));
 
     const addedItem = {
       name: props.selectedProduct.name,
@@ -69,18 +47,18 @@ const ProductForm = props => {
   };
 
   return (
-    <div className={styles.product}>
-      <Container style={containerStyles}>
-        <div className={styles['product__details']}>
+    <div className="z-20 absolute top-1/2 -translate-y-1/2 w-full px-0 pt-[11.5rem] pb-[14rem] bg-[#fffafa]">
+      <Container className="relative">
+        <div className="flex items-center justify-around mb-[9rem]">
           <div
             style={productImgBackground}
-            className={styles['product__details-img']}
+            className="bg-color-background-light-gray bg-blend-multiply bg-contain bg-no-repeat bg-center w-[59rem] h-[59rem] p-[3.6rem] rounded-[30px]"
           >
             <ProductTag>{props.selectedProduct.type}</ProductTag>
           </div>
           {/* FLEX CONTAINER */}
           <div>
-            <Heading style={headingStyles}>
+            <Heading className="font-semibold text-[4rem]">
               {props.selectedProduct.name}
             </Heading>
             <Rating />
@@ -89,7 +67,7 @@ const ProductForm = props => {
               price={props.selectedProduct.price}
               discount={props.selectedProduct.discount}
             />
-            <Paragraph style={{ maxWidth: '65rem' }}>
+            <Paragraph className="max-w-[65rem]">
               {props.selectedProduct.overview}
             </Paragraph>
             <Input
@@ -102,8 +80,8 @@ const ProductForm = props => {
             />
           </div>
         </div>
-        <div className={styles['product__description']}>
-          <Flex style={flexStyles}>
+        <div className="text-center">
+          <Flex className="gap-[2.4rem]">
             <Button hideArrow={true}>Product Description</Button>
             <Button hideArrow={true}>Additional Info</Button>
           </Flex>
@@ -112,7 +90,7 @@ const ProductForm = props => {
         <Button
           hideArrow={true}
           onClick={props.onClose}
-          style={closeBtnPosition}
+          className="absolute top-0 right-0"
         >
           X
         </Button>

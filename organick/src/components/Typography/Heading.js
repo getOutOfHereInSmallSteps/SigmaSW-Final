@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styles from './Heading.module.scss';
-
 const Heading = props => {
   return (
-    <h2 className={styles.heading} style={props.style}>
+    <h2
+      className={`font-roboto font-extrabold text-color-primary-blue text-5xl ${props.className}`}
+    >
       {props.children}
     </h2>
   );

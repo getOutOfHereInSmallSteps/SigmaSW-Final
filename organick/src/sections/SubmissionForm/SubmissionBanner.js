@@ -1,14 +1,14 @@
 import React from 'react';
 
-import styles from './SubmissionBanner.module.scss';
-
 import Heading from '../../components/Typography/Heading';
 
 const SubmissionBanner = () => {
   return (
-    <div className={styles['submission__banner']}>
+    <div
+      className={`bg-[url('./imgs/submission-banner.png')] bg-cover bg-no-repeat bg-center w-full h-[45rem] flex justify-center items-center mb-[14rem]`}
+    >
       <div>
-        <Heading>Cart</Heading>
+        <Heading className="text-[7.2rem]">Cart</Heading>
       </div>
     </div>
   );

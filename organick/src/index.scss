@@ -1,5 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import './styles/presets/base';
 @import './styles/presets/fonts';
+@import './styles/abstracts/variables';
+
+@layer conponents {
+  .navlink {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $color-primary-blue;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
 
 body {
   margin: 0;

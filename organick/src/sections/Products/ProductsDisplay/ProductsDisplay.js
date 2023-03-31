@@ -8,28 +8,10 @@ import ProductForm from '../ProductsForm/ProductForm';
 import Product from './Product';
 import Button from '../../../components/UI/Button';
 
-import styles from './ProductsDisplay.module.scss';
-
 import { useState, useEffect } from 'react';
 
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../../firebase/firebase';
-
-const subheadingStyles = {
-  textAlign: 'center',
-  marginBottom: '1rem',
-};
-const headingStyles = {
-  textAlign: 'center',
-  marginBottom: '4rem',
-};
-
-const containerStyles = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(4, 1fr)',
-  gap: '2rem',
-  marginBottom: '4.8rem',
-};
 
 const ProductsDisplay = () => {
   const [isModalActive, setIsModalActive] = useState(false);
@@ -73,11 +55,13 @@ const ProductsDisplay = () => {
   };
 
   return (
-    <div className={styles.categories}>
-      <Subheading style={subheadingStyles}>Categories</Subheading>
-      <Heading style={headingStyles}>Our Products</Heading>
+    <div className="mb-[20rem] relative">
+      <Subheading className="text-center">Categories</Subheading>
+      <Heading className="text-center mb-[4rem] text-[5rem]">
+        Our Products
+      </Heading>
 
-      <Container style={containerStyles}>
+      <Container className="grid grid-cols-4 gap-[2rem] mb-[4.8rem]">
         {productsPageOne.map(product => (
           <Product
             type={product.type}
@@ -107,7 +91,7 @@ const ProductsDisplay = () => {
           ))}
       </Container>
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className="flex justify-center">
         <Button onClick={toggleShowMoreHandler}>
           {isShownMore ? 'Hide All' : 'Load More'}
         </Button>

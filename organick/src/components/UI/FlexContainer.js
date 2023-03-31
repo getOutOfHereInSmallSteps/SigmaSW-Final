@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styles from './FlexContainer.module.scss';
-
 const FlexContainer = props => {
   return (
-    <div style={props.style} className={styles['flex-container']}>
+    <div
+      className={`flex items-center justify-center max-w-[150rem] mx-auto ${props.className}`}
+    >
       {props.children}
     </div>
   );

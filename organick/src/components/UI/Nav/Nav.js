@@ -19,18 +19,28 @@ const Nav = () => {
   const cartCounter = useSelector(state => state.cart.productsQuantity);
 
   return (
-    <nav className={styles.nav}>
+    <nav className="max-w-[160rem] mx-auto h-[15vh] flex justify-between">
       <Logo />
 
-      <ul className={styles['nav__links']}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="about">About</NavLink>
-        <NavLink>
+      <ul className="flex gap-12">
+        <NavLink className="navlink" to="/">
+          Home
+        </NavLink>
+        <NavLink className="navlink" to="about">
+          About
+        </NavLink>
+        <NavLink className="navlink">
           Pages <DownArrow />
         </NavLink>
-        <NavLink to="shop">Shop</NavLink>
-        <NavLink to="projects">Projects</NavLink>
-        <NavLink to="news">News</NavLink>
+        <NavLink className="navlink" to="shop">
+          Shop
+        </NavLink>
+        <NavLink className="navlink" to="projects">
+          Projects
+        </NavLink>
+        <NavLink className="navlink" to="news">
+          News
+        </NavLink>
       </ul>
 
       <FlexContainer>

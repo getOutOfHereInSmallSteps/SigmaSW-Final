@@ -1,10 +1,8 @@
 import React from 'react';
 
-import styles from './List.module.scss';
-
 const List = props => {
   return (
-    <ul style={props.style} className={styles.list}>
+    <ul style={props.style} className={props.className}>
       {props.children}
     </ul>
   );

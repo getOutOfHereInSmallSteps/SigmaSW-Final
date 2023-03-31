@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './SubmissionForm.module.scss';
 import Container from '../../components/UI/Container';
 import Button from '../../components/UI/Button';
 
@@ -72,9 +71,9 @@ const SubmissionForm = () => {
   };
 
   return (
-    <Container className={styles['form__container']}>
-      <form onSubmit={submitHandler}>
-        <div className={styles.main}>
+    <Container className="mb-[10rem]">
+      <form onSubmit={submitHandler} className="mb-[12rem]">
+        <div className="grid grid-cols-2 gap-[5rem] mb-[5rem]">
           <Input
             label={'Full Name*'}
             inptType={'text'}
@@ -122,7 +121,7 @@ const SubmissionForm = () => {
           inptPlaceholder={'some extra information'}
         />
       </form>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className="flex justify-center">
         <Button onClick={submitHandler} hideArrow={true}>
           Confifm
         </Button>

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styles from './Paragraph.module.scss';
-
 const Paragraph = props => {
   return (
-    <p style={props.style} className={styles.paragraph}>
+    <p
+      className={`font-opensans non-italic font-normal text-3xl text-color-paragraph-gray ${props.className}`}
+    >
       {props.children}
     </p>
   );
