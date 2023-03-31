@@ -40,8 +40,7 @@ const ProductsDisplay = () => {
     setIsModalActive(true);
   };
 
-  const closeModalHandler = e => {
-    e.preventDefault();
+  const closeModalHandler = () => {
     setIsModalActive(false);
     setActiveItem(null);
   };
@@ -49,8 +48,7 @@ const ProductsDisplay = () => {
   const productsPageOne = productsData.slice(0, productsData.length / 2);
   const productsPageTwo = productsData.slice([productsData.length / 2]);
 
-  const toggleShowMoreHandler = e => {
-    e.preventDefault();
+  const toggleShowMoreHandler = () => {
     setIsShownMore(prevState => !prevState);
   };
 

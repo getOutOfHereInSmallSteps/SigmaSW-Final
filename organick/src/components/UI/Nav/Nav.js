@@ -54,9 +54,13 @@ const Nav = () => {
           <Link to="form" className={styles['btn']}>
             <CartIcon />
           </Link>
-          <Heading
-            style={{ fontSize: '1.8rem' }}
-          >{`Cart (${cartCounter})`}</Heading>
+          <p className="font-roboto text-[1.8rem] font-semibold text-color-primary-blue">
+            Cart (
+            <span className={cartCounter !== 0 && 'text-color-red'}>
+              {cartCounter}
+            </span>
+            )
+          </p>
         </div>
       </FlexContainer>
     </nav>

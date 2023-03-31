@@ -2,7 +2,7 @@ import React from 'react';
 
 const List = props => {
   return (
-    <ul style={props.style} className={props.className}>
+    <ul style={props.style} className={`flex flex-col ${props.className}`}>
       {props.children}
     </ul>
   );

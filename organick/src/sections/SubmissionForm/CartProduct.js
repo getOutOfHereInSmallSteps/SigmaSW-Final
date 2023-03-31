@@ -30,7 +30,7 @@ const CartProduct = props => {
       <div className="flex items-center gap-4">
         <div
           style={cartProductImage}
-          className={`rounded-[20px] w-[20rem] h-[20rem] bg-cover bg-blend-multiply`}
+          className={`rounded-[20px] w-[20rem] h-[20rem] bg-cover bg-blend-multiply bg-center bg-color-white p-4`}
         ></div>
         <Heading className="text-[3.6rem]">{props.name}</Heading>
         <ProductPrice price={props.price} discount={props.discount} />

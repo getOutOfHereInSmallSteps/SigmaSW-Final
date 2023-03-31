@@ -3,11 +3,15 @@ import React from 'react';
 import { ReactComponent as ButtonArrow } from '../../svg/button-arrow.svg';
 
 const Button = props => {
-  const clickHandler = props.onClick || (e => e.preventDefault());
+  const clickHandler = e => {
+    e.preventDefault?.();
+
+    props.onClick?.(e);
+  };
 
   const btnStyles = {
     yellow: 'text-color-primary-blue bg-color-primary-yellow',
-    blue: 'text-color-white bg-color-primary-blue',
+    active: 'bg-color-primary-green-tint text-color-primary-blue',
   };
 
   return (

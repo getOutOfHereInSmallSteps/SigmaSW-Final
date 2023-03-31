@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ReactComponent as Rating } from '../../../svg/product-rating.svg';
 
@@ -18,12 +18,19 @@ import Input from '../../../components/UI/Input';
 
 const ProductForm = props => {
   const [inputQuantity, setInputQuantity] = useState(1);
+  const [infoType, setInfoType] = useState('description');
   const dispatch = useDispatch();
+
+  console.log(props.selectedProduct);
+
+  useEffect(() => {
+    document.body.classList.add('remove-scroll');
+    return () => document.body.classList.remove('remove-scroll');
+  }, []);
 
   const productsAmount = useRef();
 
-  const addToCartHandler = e => {
-    e.preventDefault();
+  const addToCartHandler = () => {
     const selectedProductAmount = +productsAmount.current.value;
 
     const addedItem = {
@@ -47,7 +54,7 @@ const ProductForm = props => {
   };
 
   return (
-    <div className="z-20 absolute top-1/2 -translate-y-1/2 w-full px-0 pt-[11.5rem] pb-[14rem] bg-[#fffafa]">
+    <div className="z-20 fixed top-1/2 -translate-y-1/2 w-full px-0 pt-[11.5rem] pb-[14rem] bg-[#fffafa]">
       <Container className="relative">
         <div className="flex items-center justify-around mb-[9rem]">
           <div
@@ -56,7 +63,6 @@ const ProductForm = props => {
           >
             <ProductTag>{props.selectedProduct.type}</ProductTag>
           </div>
-          {/* FLEX CONTAINER */}
           <div>
             <Heading className="font-semibold text-[4rem]">
               {props.selectedProduct.name}
@@ -81,14 +87,26 @@ const ProductForm = props => {
           </div>
         </div>
         <div className="text-center">
-          <Flex className="gap-[2.4rem]">
-            <Button hideArrow={true}>Product Description</Button>
-            <Button hideArrow={true}>Additional Info</Button>
+          <Flex className="gap-[2.4rem] mb-10">
+            <Button
+              hideArrow
+              type={infoType === 'description' ? 'active' : ''}
+              onClick={() => setInfoType('description')}
+            >
+              Product Description
+            </Button>
+            <Button
+              hideArrow
+              type={infoType === 'additionalInfo' ? 'active' : ''}
+              onClick={() => setInfoType('additionalInfo')}
+            >
+              Additional Info
+            </Button>
           </Flex>
-          <Paragraph>{props.selectedProduct.description}</Paragraph>
+          <Paragraph>{props.selectedProduct[infoType]}</Paragraph>
         </div>
         <Button
-          hideArrow={true}
+          hideArrow
           onClick={props.onClose}
           className="absolute top-0 right-0"
         >
