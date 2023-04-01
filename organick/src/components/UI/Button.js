@@ -12,6 +12,7 @@ const Button = props => {
   const btnStyles = {
     yellow: 'text-color-primary-blue bg-color-primary-yellow',
     active: 'bg-color-primary-green-tint text-color-primary-blue',
+    white: 'bg-color-white border-2 border-solid border-color-primary-blue ',
   };
 
   return (

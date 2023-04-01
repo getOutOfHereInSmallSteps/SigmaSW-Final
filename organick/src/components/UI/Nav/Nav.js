@@ -43,7 +43,7 @@ const Nav = () => {
         </NavLink>
       </ul>
 
-      <FlexContainer>
+      <FlexContainer className="items-center">
         <div className={styles.search}>
           <input className={styles['search-input']} type="text" name="" id="" />
           <Link className={styles['btn']}>
