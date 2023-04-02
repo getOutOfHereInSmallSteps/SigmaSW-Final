@@ -4,7 +4,6 @@
 
 @import './styles/presets/base';
 @import './styles/presets/fonts';
-@import './styles/abstracts/variables';
 
 @layer conponents {
   .navlink {
@@ -12,7 +11,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    color: $color-primary-blue;
+    color: #274c5b;
     display: flex;
     align-items: center;
     gap: 0.5rem;

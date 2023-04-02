@@ -30,7 +30,7 @@ const FormPage = () => {
   );
 
   return (
-    <React.Fragment>
+    <div className="mb-[14rem]">
       <SubmissionBanner />
       <SubmissionContainer>
         {cart.map(cartItem => (
@@ -62,7 +62,7 @@ const FormPage = () => {
         )}
         {isOrderConfirmed && <SubmissionForm />}
       </SubmissionContainer>
-    </React.Fragment>
+    </div>
   );
 };
 

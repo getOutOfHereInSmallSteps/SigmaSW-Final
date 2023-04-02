@@ -5,7 +5,6 @@ import Nav from '../components/UI/Nav/Nav';
 import Footer from '../components/UI/Footer/Footer';
 import Paragraph from '../components/Typography/Paragraph';
 import Button from '../components/UI/Button';
-import FlexContainer from '../components/UI/FlexContainer';
 import { useNavigate } from 'react-router-dom';
 
 const NotFoundPage = () => {
@@ -18,7 +17,7 @@ const NotFoundPage = () => {
   return (
     <React.Fragment>
       <Nav />
-      <main>
+      <main className="mb-[14rem]">
         <div className="h-[90rem] bg-[url('./imgs/not-found-page.png')]">
           <div className="flex justify-end items-center h-full max-w-[140rem] mx-auto">
             <div className="text-center w-fit">
