@@ -1,5 +1,4 @@
 import React from 'react';
-import FlexContainer from '../UI/FlexContainer';
 import Flex from '../UI/Flex';
 import Heading from './Heading';
 

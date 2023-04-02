@@ -2,7 +2,8 @@ import React from 'react';
 import Container from '../../components/UI/Container';
 import Button from '../../components/UI/Button';
 
-import { Input, Textarea } from './FormInput';
+import FormInput from './FormInput';
+import FormTextArea from './FormTextArea';
 
 import useInput from '../../hooks/use-input';
 import { useNavigate } from 'react-router-dom';
@@ -74,7 +75,7 @@ const SubmissionForm = () => {
     <Container className="mb-[10rem]">
       <form onSubmit={submitHandler} className="mb-[12rem]">
         <div className="grid grid-cols-2 gap-[5rem] mb-[5rem]">
-          <Input
+          <FormInput
             label={'Full Name*'}
             inptType={'text'}
             errorMessage={'Name Input is Invalid'}
@@ -84,7 +85,7 @@ const SubmissionForm = () => {
             onChange={nameChangeHandler}
             onBlur={nameBlurHandler}
           />
-          <Input
+          <FormInput
             label={'Your Email*'}
             inptType={'text'}
             errorMessage={'Email Input is Invalid'}
@@ -94,7 +95,7 @@ const SubmissionForm = () => {
             onChange={emailChangeHandler}
             onBlur={emailBlurHandler}
           />
-          <Input
+          <FormInput
             label={'Address*'}
             inptType={'text'}
             errorMessage={'Address Input is Invalid'}
@@ -104,7 +105,7 @@ const SubmissionForm = () => {
             onChange={addressChangeHandler}
             onBlur={addressBlurHandler}
           />
-          <Input
+          <FormInput
             label={'Phone number*'}
             inptType={'tel'}
             errorMessage={'Phone Input is Invalid'}
@@ -115,7 +116,7 @@ const SubmissionForm = () => {
             onBlur={phoneBlurHandler}
           />
         </div>
-        <Textarea
+        <FormTextArea
           label={'Message'}
           inptType={'text'}
           inptPlaceholder={'some extra information'}

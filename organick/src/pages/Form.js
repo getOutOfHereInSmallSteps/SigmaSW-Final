@@ -50,13 +50,13 @@ const FormPage = () => {
             discount={prices.totalDiscount}
           />
         ) : (
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="flex justify-center">
             <Heading>No Products Found</Heading>
           </div>
         )}
 
         {!isOrderConfirmed && cart.length !== 0 && (
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="flex justify-center">
             <Button onClick={orderConfirmHandler}>To order</Button>
           </div>
         )}

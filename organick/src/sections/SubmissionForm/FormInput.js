@@ -1,27 +1,23 @@
 import React from 'react';
 
-import inptStyles from './FormInput.module.scss';
-
-export const Input = props => {
-  const inputStyles = `${inptStyles.input} ${
-    props.hasError ? inptStyles['input-error'] : ''
-  }`;
-
+const Input = props => {
   return (
-    <label className={inptStyles.label}>
+    <label className="italic font-semibold text-[1.8rem] leading-tight flex flex-col gap-12">
       <p>
-        <span className={inptStyles['label-message']}>{props.label}</span>
+        <span className="mr-8">{props.label}</span>
         {props.hasError && (
-          <span className={inptStyles['label-error']}>
-            {props.errorMessage}
-          </span>
+          <span className="text-color-red font-bold">{props.errorMessage}</span>
         )}
       </p>
 
       <input
         type={props.inptType}
         placeholder={props.inptPlaceholder}
-        className={inputStyles}
+        className={`italic font-normal text-[1.8rem] text-[#ababab] bg-color-white border-solid border border-color-primary-green rounded-[16px] p-[3rem] ${
+          props.hasError
+            ? 'bg-[#fff5f5] border border-solid border-color-red'
+            : undefined
+        }`}
         value={props.value}
         onChange={props.onChange}
         onBlur={props.onBlur}
@@ -30,15 +26,4 @@ export const Input = props => {
   );
 };
 
-export const Textarea = props => {
-  return (
-    <label className={inptStyles.label}>
-      {props.label}
-      <textarea
-        type={props.inptType}
-        placeholder={props.inptPlaceholder}
-        className={`${inptStyles.input} ${inptStyles.textarea}`}
-      />
-    </label>
-  );
-};
+export default Input;

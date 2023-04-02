@@ -21,8 +21,6 @@ const ProductForm = props => {
   const [infoType, setInfoType] = useState('description');
   const dispatch = useDispatch();
 
-  console.log(props.selectedProduct);
-
   useEffect(() => {
     document.body.classList.add('remove-scroll');
     return () => document.body.classList.remove('remove-scroll');
@@ -64,7 +62,7 @@ const ProductForm = props => {
             <ProductTag>{props.selectedProduct.type}</ProductTag>
           </div>
           <div>
-            <Heading className="font-semibold text-[4rem]">
+            <Heading className="font-semibold text-[4rem] mb-6">
               {props.selectedProduct.name}
             </Heading>
             <Rating />
@@ -72,8 +70,9 @@ const ProductForm = props => {
             <ProductPrice
               price={props.selectedProduct.price}
               discount={props.selectedProduct.discount}
+              className=""
             />
-            <Paragraph className="max-w-[65rem]">
+            <Paragraph className="max-w-[65rem] mt-8 mb-10">
               {props.selectedProduct.overview}
             </Paragraph>
             <Input
@@ -103,7 +102,9 @@ const ProductForm = props => {
               Additional Info
             </Button>
           </Flex>
-          <Paragraph>{props.selectedProduct[infoType]}</Paragraph>
+          <Paragraph className="min-h-[7em]">
+            {props.selectedProduct[infoType]}
+          </Paragraph>
         </div>
         <Button
           hideArrow
