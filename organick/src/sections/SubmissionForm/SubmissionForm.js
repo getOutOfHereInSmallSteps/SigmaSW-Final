@@ -7,8 +7,8 @@ import FormTextArea from './FormTextArea';
 
 import useInput from '../../hooks/use-input';
 import { useNavigate } from 'react-router-dom';
-import { clearCart } from '../../store';
 import { useDispatch } from 'react-redux';
+import { clearCart } from '../../store';
 
 const SubmissionForm = () => {
   const {
@@ -72,9 +72,9 @@ const SubmissionForm = () => {
   };
 
   return (
-    <Container className="mb-[10rem]">
+    <Container className="mb-[10rem] px-0">
       <form onSubmit={submitHandler} className="mb-[12rem]">
-        <div className="grid grid-cols-2 gap-[5rem] mb-[5rem]">
+        <div className="grid grid-cols-2 max-md:grid-cols-1 gap-[5rem] mb-[5rem]">
           <FormInput
             label={'Full Name*'}
             inptType={'text'}
@@ -123,7 +123,11 @@ const SubmissionForm = () => {
         />
       </form>
       <div className="flex justify-center">
-        <Button onClick={submitHandler} hideArrow={true}>
+        <Button
+          onClick={submitHandler}
+          hideArrow={true}
+          type={!formIsValid ? 'disabled' : ''}
+        >
           Confifm
         </Button>
       </div>

@@ -4,7 +4,11 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.scss'],
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        'auto-fill-minmax': 'repeat(auto-fill, minmax(30rem, 1fr))',
+      },
+    },
     html: {
       fontSize: '62.5%',
     },

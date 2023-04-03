@@ -10,7 +10,7 @@ import NewsPiece from './NewsPiece';
 const News = () => {
   return (
     <Container className="mb-[20rem]">
-      <div className="flex justify-between mb-[4.8rem]">
+      <div className="flex justify-between mb-[4.8rem] flex-wrap gap-8">
         <div className="max-w-[70rem]">
           <Subheading>News</Subheading>
           <Heading className="text-[5rem]">
@@ -27,7 +27,7 @@ const News = () => {
           heading="The Benefits of Vitamin D & How to Get It"
           description="Simply dummy text of the printing and typesetting industry. Lorem Ipsum"
           author="Rachi Card"
-          className="bg-[url('./imgs/news-1.png')]"
+          className="bg-[url('./imgs/news-1.png')] max-md:mb-[6rem]"
         />
         <NewsPiece
           heading="Our Favourite Summertime Tommeto"

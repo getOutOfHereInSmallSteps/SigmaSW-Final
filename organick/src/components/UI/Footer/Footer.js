@@ -14,10 +14,10 @@ import FooterCol from './FooterCol';
 const Footer = () => {
   return (
     <footer>
-      <FlexContainer className="justify-between max-w-[140rem] mb-[12rem] items-stretch">
+      <FlexContainer className="justify-between max-w-[140rem] mb-[12rem] items-stretch  max-lg:flex-col max-lg:items-start max-lg:gap-20 max-lg:items-center">
         <FooterCol
           heading="Contact us"
-          className="text-right border-l-0 border-r border-r-gray-500"
+          className="text-right border-l-0 border-r border-r-gray-500 max-lg:border-none max-lg:text-left"
         >
           <li>
             <Paragraph className="font-[700]">Email</Paragraph>
@@ -60,7 +60,7 @@ const Footer = () => {
 
         <FooterCol
           heading="Utility Pages"
-          className="text-left border-r-0 border-l border-l-gray-500"
+          className="text-left border-r-0 border-l border-l-gray-500 max-lg:border-none"
         >
           <li>
             <Paragraph>Style Guide</Paragraph>

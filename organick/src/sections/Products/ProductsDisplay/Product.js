@@ -18,7 +18,7 @@ const Product = props => {
 
   return (
     <div
-      className="flex flex-col max-w-[33rem] h-[48rem] p-[3rem] rounded-[30px] bg-color-background-light-gray cursor-pointer"
+      className={`flex flex-col  h-[48rem] p-[3rem] rounded-[30px] bg-color-background-light-gray cursor-pointer ${props.className}`}
       onClick={selectionHandler}
     >
       <ProductTag>{props.type}</ProductTag>

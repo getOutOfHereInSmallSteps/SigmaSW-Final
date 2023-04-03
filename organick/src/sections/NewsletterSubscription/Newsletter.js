@@ -7,12 +7,12 @@ import Button from '../../components/UI/Button';
 const Newsletter = () => {
   return (
     <Container>
-      <div className="py-[10rem] px-[7rem] w-full rounded-[30px] bg-[url('./imgs/newsletter-bg.jpg')] flex justify-between items-center mb-[20rem]">
+      <div className="py-[10rem] px-[7rem] max-md:px-[2.4rem] w-full rounded-[30px] bg-[url('./imgs/newsletter-bg.jpg')] flex justify-between gap-8 flex-wrap items-center mb-[20rem]">
         <Heading className="text-[5rem] text-color-white max-w-[36rem]">
           Subscribe to our Newsletter
         </Heading>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           <input
             type="text"
             placeholder="Your Email Address"

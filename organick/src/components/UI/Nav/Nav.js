@@ -8,13 +8,14 @@ import Logo from '../../Typography/Logo';
 import Flex from '../Flex';
 import NavSearch from './NavSearch';
 import NavCart from './NavCart';
+import MenuBurger from './MenuBurger';
 
 const Nav = () => {
   return (
-    <nav className="max-w-[160rem] h-[15vh] mx-auto flex justify-between ">
+    <nav className="max-w-[170rem] h-[15vh] mx-auto flex justify-between items-center px-4">
       <Logo />
 
-      <ul className="flex gap-12">
+      <ul className="flex gap-12 max-md:hidden">
         <NavLink className="navlink" to="/">
           Home
         </NavLink>
@@ -39,6 +40,8 @@ const Nav = () => {
         <NavSearch />
         <NavCart />
       </Flex>
+
+      <MenuBurger className="hidden max-md:block" />
     </nav>
   );
 };

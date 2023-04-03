@@ -1,4 +1,7 @@
 import React from 'react';
+
+import useHttp from '../hooks/use-http';
+
 import AboutSection from '../sections/About/AboutSection';
 import BannersSection from '../sections/Banners/BannersSection';
 import Gallery from '../sections/Gallery/Gallery';

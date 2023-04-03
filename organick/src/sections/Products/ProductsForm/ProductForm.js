@@ -52,12 +52,12 @@ const ProductForm = props => {
   };
 
   return (
-    <div className="z-20 fixed top-1/2 -translate-y-1/2 w-full px-0 pt-[11.5rem] pb-[14rem] bg-[#fffafa]">
+    <div className="z-20 fixed top-1/2 -translate-y-1/2 w-full p-4 bg-[#fffafa] h-full overflow-scroll">
       <Container className="relative">
         <div className="flex items-center justify-around mb-[9rem]">
           <div
             style={productImgBackground}
-            className="bg-color-background-light-gray bg-blend-multiply bg-contain bg-no-repeat bg-center w-[59rem] h-[59rem] p-[3.6rem] rounded-[30px]"
+            className="bg-color-background-light-gray bg-blend-multiply bg-contain bg-no-repeat bg-center w-[59rem] h-[59rem] p-[3.6rem] rounded-[30px] max-md:hidden"
           >
             <ProductTag>{props.selectedProduct.type}</ProductTag>
           </div>
@@ -86,7 +86,7 @@ const ProductForm = props => {
           </div>
         </div>
         <div className="text-center">
-          <Flex className="gap-[2.4rem] mb-10">
+          <Flex className="gap-[2.4rem] mb-10 flex-wrap">
             <Button
               hideArrow
               type={infoType === 'description' ? 'active' : ''}

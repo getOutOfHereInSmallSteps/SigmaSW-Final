@@ -4,7 +4,7 @@ import Button from '../UI/Button';
 
 const Input = React.forwardRef((props, ref) => {
   return (
-    <div className="flex gap-[2rem] items-center">
+    <div className="flex flex-wrap gap-[2rem] items-center">
       <label className="font-roboto font-bold text-[2rem]">Quantity :</label>
       <input
         type="number"

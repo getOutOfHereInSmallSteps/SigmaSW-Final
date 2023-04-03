@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import Heading from '../../../components/Typography/Heading';
 import Subheading from '../../../components/Typography/Subheading';
 import Container from '../../../components/UI/Container';
@@ -8,28 +10,15 @@ import ProductForm from '../ProductsForm/ProductForm';
 import Product from './Product';
 import Button from '../../../components/UI/Button';
 
-import { useState, useEffect } from 'react';
-
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../firebase/firebase';
+import { useState } from 'react';
+import CartButton from '../../../components/UI/CartButton';
 
 const ProductsDisplay = () => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
-  const [productsData, setProductsData] = useState([]);
   const [isShownMore, setIsShownMore] = useState(false);
 
-  useEffect(() => {
-    getDocs(collection(db, 'products')).then(querySnapshot => {
-      setProductsData([]);
-      querySnapshot.forEach(el =>
-        setProductsData(prevState => [...prevState, el.data()])
-      );
-      setProductsData(prevState =>
-        prevState.sort((a, b) => b.discount - a.discount)
-      );
-    });
-  }, []);
+  const productsData = useSelector(state => state.products.list);
 
   const selectItemHandler = productId => {
     const selectedItem = productsData.find(element => element.id === productId);
@@ -46,7 +35,7 @@ const ProductsDisplay = () => {
   };
 
   const productsPageOne = productsData.slice(0, productsData.length / 2);
-  const productsPageTwo = productsData.slice([productsData.length / 2]);
+  const productsPageTwo = productsData.slice(productsData.length / 2);
 
   const toggleShowMoreHandler = () => {
     setIsShownMore(prevState => !prevState);
@@ -59,7 +48,7 @@ const ProductsDisplay = () => {
         Our Products
       </Heading>
 
-      <Container className="grid grid-cols-4 gap-[2rem] mb-[4.8rem]">
+      <Container className="grid grid-cols-4 grid-cols-auto-fill-minmax gap-[2rem] mb-[4.8rem]">
         {productsPageOne.map(product => (
           <Product
             type={product.type}

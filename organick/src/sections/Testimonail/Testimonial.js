@@ -6,14 +6,18 @@ import TestimonialSidebar from '../../imgs/testimonial-sidebar.png';
 
 const Testimonial = () => {
   return (
-    <div className="flex w-full justify-between">
-      <img src={TestimonialSidebar} alt="" />
-      <div className="grow-1 shrink-0 flex flex-col items-center justify-center">
+    <div className="flex justify-between items-center w-full max-xl:justify-center max-lg:p-8 max-xl:mb-[15rem]">
+      <div className="max-xl:hidden">
+        <img src={TestimonialSidebar} alt="" className="shrink" />
+      </div>
+      <div className="flex flex-col shrink items-center justify-center">
         <Review />
-        <hr className="border-solid border-1 border-color-black w-full opacity-10 mb-[10rem]" />
+        <hr className="border-solid border-1 border-color-black opacity-10 mb-[10rem] w-full" />
         <ChartsContainer />
       </div>
-      <img src={TestimonialSidebar} className="rotate-180" alt="" />
+      <div className="max-xl:hidden">
+        <img src={TestimonialSidebar} className="rotate-180 shrink" alt="" />
+      </div>
     </div>
   );
 };

@@ -13,6 +13,7 @@ const Button = props => {
     yellow: 'text-color-primary-blue bg-color-primary-yellow',
     active: 'bg-color-primary-green-tint text-color-primary-blue',
     white: 'bg-color-white border-2 border-solid border-color-primary-blue ',
+    disabled: 'pointer-events-none bg-[#dee2e6] cursor-not-allowed',
   };
 
   return (

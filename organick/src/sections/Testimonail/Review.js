@@ -11,7 +11,7 @@ const Review = () => {
   return (
     <div className="flex flex-col items-center mb-[10rem]">
       <Subheading className="text-[3.6rem] mb-4">Testimonail</Subheading>
-      <Heading className="text-[5rem] mb-[6rem]">
+      <Heading className="text-[5rem] mb-[6rem] text-center">
         What Our Customer Saying?
       </Heading>
       <img src={UserAvatar} className="rounded-full mb-8" alt="User Avatar" />

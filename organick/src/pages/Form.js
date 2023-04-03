@@ -60,7 +60,7 @@ const FormPage = () => {
             <Button onClick={orderConfirmHandler}>To order</Button>
           </div>
         )}
-        {isOrderConfirmed && <SubmissionForm />}
+        {isOrderConfirmed && cart.length !== 0 && <SubmissionForm />}
       </SubmissionContainer>
     </div>
   );

@@ -5,6 +5,8 @@ import FormPage from './pages/Form';
 import SuccessMessagePage from './pages/SuccessMessage';
 import NotFoundPage from './pages/NotFoundPage';
 
+import useHttp from './hooks/use-http';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,6 +30,8 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  useHttp();
+
   return <RouterProvider router={router} />;
 }
 

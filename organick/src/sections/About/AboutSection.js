@@ -16,9 +16,15 @@ import { ReactComponent as MailboxIcon } from '../../svg/mailbox.svg';
 const AboutSection = () => {
   return (
     <div className="bg-color-background-light-gray py-[20rem] mb-[18rem]">
-      <Container className="flex items-center">
-        <img src={aboutImg} alt="" />
-        <div>
+      <Container className="flex items-center max-lg:justify-center">
+        <div className="shrink grow-0 max-w-[80rem]">
+          <img
+            src={aboutImg}
+            alt="A pile of oranges, grapefruits and lime"
+            className="max-lg:hidden"
+          />
+        </div>
+        <div className="basis-3/6">
           <Subheading>About Us</Subheading>
           <Heading className="mb-[1.6rem] text-[5rem]">
             We Believe in Working Accredited Farmers
