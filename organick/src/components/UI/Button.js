@@ -10,18 +10,23 @@ const Button = props => {
   };
 
   const btnStyles = {
-    yellow: 'text-color-primary-blue bg-color-primary-yellow',
+    yellow:
+      'text-color-primary-blue bg-color-primary-yellow hover:bg-[#f1d780] active:bg-[#d7be67]',
     active: 'bg-color-primary-green-tint text-color-primary-blue',
-    white: 'bg-color-white border-2 border-solid border-color-primary-blue ',
+    white:
+      'bg-color-white border-2 border-solid border-color-primary-blue hover:bg-[#e6e6e6] active:bg-[#ccc]',
     disabled: 'pointer-events-none bg-[#dee2e6] cursor-not-allowed',
   };
 
   return (
     <a
       href="/"
-      className={`font-roboto py-[2.8rem] px-[4rem]  flex rounded-3xl  text-[2rem] font-bold items-center gap-4 w-[fit-content] ${
+      className={`font-roboto py-[2.8rem] px-[4rem]  flex rounded-3xl  text-[2rem] font-bold items-center gap-4 w-[fit-content] transition duration-300 ${
         props.className
-      } ${btnStyles[props.type] || 'text-color-white bg-color-primary-blue'}`}
+      } ${
+        btnStyles[props.type] ||
+        'text-color-white bg-color-primary-blue hover:bg-[#3d5e6b] active:bg-[#234452]'
+      }`}
       onClick={clickHandler}
     >
       {props.children}

@@ -11,12 +11,16 @@ const Input = React.forwardRef((props, ref) => {
         min={0}
         max={99}
         step={1}
-        className="inline-block py-[3rem] px-[6rem] w-[17rem] bg-color-white border-solid border-2 border-color-primary-blue rounded-[16px] font-roboto font-bold text-[2rem]"
+        className={`inline-block py-[3rem] px-[6rem] w-[17rem] bg-color-white border-solid border-2 border-color-primary-blue rounded-[16px] font-roboto font-bold text-[2rem] transition duration-300 ${props.className}`}
         ref={ref}
         value={props.inputQuantity}
         onChange={props.inputChangeHandler}
       />
-      <Button hideArrow={props.hideButtonArrow} onClick={props.onClick}>
+      <Button
+        hideArrow={props.hideButtonArrow}
+        onClick={props.onClick}
+        type={props.btnType}
+      >
         {props.buttonText}
       </Button>
     </div>

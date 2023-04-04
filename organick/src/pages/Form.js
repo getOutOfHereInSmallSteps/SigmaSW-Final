@@ -29,6 +29,11 @@ const FormPage = () => {
     { totalPrice: 0, totalDiscount: 0 }
   );
 
+  const order = {
+    cart,
+    prices,
+  };
+
   return (
     <div className="mb-[14rem]">
       <SubmissionBanner />
@@ -60,7 +65,9 @@ const FormPage = () => {
             <Button onClick={orderConfirmHandler}>To order</Button>
           </div>
         )}
-        {isOrderConfirmed && cart.length !== 0 && <SubmissionForm />}
+        {isOrderConfirmed && cart.length !== 0 && (
+          <SubmissionForm orderData={order} />
+        )}
       </SubmissionContainer>
     </div>
   );

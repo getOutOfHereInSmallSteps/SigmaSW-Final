@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { useRef } from 'react';
+
 import Container from '../../components/UI/Container';
 import Button from '../../components/UI/Button';
 
@@ -10,7 +13,19 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { clearCart } from '../../store';
 
-const SubmissionForm = () => {
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../firebase/firebase';
+
+const addProduct = async productData => {
+  try {
+    const docRef = await addDoc(collection(db, 'orders'), productData);
+    console.log('Product added with ID: ', docRef.id);
+  } catch (error) {
+    console.error('Error adding product: ', error);
+  }
+};
+
+const SubmissionForm = props => {
   const {
     value: enteredName,
     isValid: nameIsValid,
@@ -49,6 +64,8 @@ const SubmissionForm = () => {
     reset: resetPhoneInput,
   } = useInput(phone => phone.trim().length !== 0);
 
+  const messageRef = useRef();
+
   let formIsValid = false;
 
   if (nameIsValid && phoneIsValid && emailIsValid && addressIsValid)
@@ -61,6 +78,18 @@ const SubmissionForm = () => {
     e?.preventDefault();
 
     if (!formIsValid) return;
+    const enteredMessage = messageRef.current.value;
+
+    const order = {
+      ...props.orderData,
+      username: enteredName,
+      email: enteredEmail,
+      address: enteredAddress,
+      phone: enteredPhone,
+      message: enteredMessage,
+    };
+
+    addProduct(order);
 
     dispatch(clearCart());
 
@@ -120,6 +149,7 @@ const SubmissionForm = () => {
           label={'Message'}
           inptType={'text'}
           inptPlaceholder={'some extra information'}
+          ref={messageRef}
         />
       </form>
       <div className="flex justify-center">

@@ -8,6 +8,40 @@ module.exports = {
       gridTemplateColumns: {
         'auto-fill-minmax': 'repeat(auto-fill, minmax(30rem, 1fr))',
       },
+      animation: {
+        fade: 'fade-in 0.7s ease-out',
+        enter: 'enter 0.4s ease-out',
+        leave: 'leave 0.4s ease-out',
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
+        enter: {
+          '0%': {
+            top: '0',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(-50%)',
+            top: '50%',
+            opacity: '1',
+          },
+        },
+        leave: {
+          '0%': {
+            opacity: '1',
+          },
+          '100%': {
+            opacity: '0',
+          },
+        },
+      },
     },
     html: {
       fontSize: '62.5%',

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import FadeInSection from '../../../components/Animations/FadeInSection';
 
 import Heading from '../../../components/Typography/Heading';
 import Subheading from '../../../components/Typography/Subheading';
@@ -22,28 +23,28 @@ const ProductsSection = () => {
 
   const closeModalHandler = () => {
     setIsModalActive(false);
-    setActiveItem(null);
   };
 
   return (
-    <div className="mb-[20rem] relative">
-      <Subheading className="text-center">Categories</Subheading>
-      <Heading className="text-center mb-[4rem] text-[5rem]">
-        Our Products
-      </Heading>
+    <FadeInSection>
+      <div className="mb-[20rem] relative">
+        <Subheading className="text-center">Categories</Subheading>
+        <Heading className="text-center mb-[4rem] text-[5rem]">
+          Our Products
+        </Heading>
 
-      <ProductsDisplay onSelect={selectItemHandler} products={productsData} />
+        <ProductsDisplay onSelect={selectItemHandler} products={productsData} />
 
-      {isModalActive && (
+        <ProductForm
+          selectedProduct={activeItem}
+          onClose={closeModalHandler}
+          show={isModalActive}
+        />
         <React.Fragment>
-          <ProductForm
-            selectedProduct={activeItem}
-            onClose={closeModalHandler}
-          />
-          <ProductBackdrop onClose={closeModalHandler} />
+          {isModalActive && <ProductBackdrop onClose={closeModalHandler} />}
         </React.Fragment>
-      )}
-    </div>
+      </div>
+    </FadeInSection>
   );
 };
 
