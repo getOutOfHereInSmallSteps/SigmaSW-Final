@@ -1,7 +1,5 @@
 import React from 'react';
 
-import useHttp from '../hooks/use-http';
-
 import AboutSection from '../sections/About/AboutSection';
 import BannersSection from '../sections/Banners/BannersSection';
 import Gallery from '../sections/Gallery/Gallery';
@@ -9,7 +7,7 @@ import HeroSection from '../sections/Header/HeroSection';
 import News from '../sections/News/News';
 import Newsletter from '../sections/NewsletterSubscription/Newsletter';
 import Offers from '../sections/Offers/Offers';
-import ProductsDisplay from '../sections/Products/ProductsDisplay/ProductsDisplay';
+import ProductsSection from '../sections/Products/ProductsDisplay/ProductsSection';
 import Testimonial from '../sections/Testimonail/Testimonial';
 import WhoWeAre from '../sections/WhoWeAre/WhoWeAre';
 
@@ -19,7 +17,7 @@ const HomePage = () => {
       <HeroSection />
       <BannersSection />
       <AboutSection />
-      <ProductsDisplay />
+      <ProductsSection />
       <Testimonial />
       <Offers />
       <WhoWeAre />

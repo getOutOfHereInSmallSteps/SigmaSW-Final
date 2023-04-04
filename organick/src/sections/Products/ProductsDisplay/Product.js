@@ -7,11 +7,6 @@ import ProductPrice from '../ProductPrice';
 import Flex from '../../../components/UI/Flex';
 
 const Product = props => {
-  const selectionHandler = () => {
-    props.onOpenModal();
-    props.onSelectItem(props.id);
-  };
-
   const productImgBackground = {
     backgroundImage: `url(${props.link})`,
   };
@@ -19,7 +14,7 @@ const Product = props => {
   return (
     <div
       className={`flex flex-col  h-[48rem] p-[3rem] rounded-[30px] bg-color-background-light-gray cursor-pointer ${props.className}`}
-      onClick={selectionHandler}
+      onClick={() => props.onSelectItem(props.id)}
     >
       <ProductTag>{props.type}</ProductTag>
       <div

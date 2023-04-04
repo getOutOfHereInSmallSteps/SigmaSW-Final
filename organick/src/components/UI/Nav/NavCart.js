@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-import { ReactComponent as CartIcon } from '../../../svg/cart-icon.svg';
 import Paragraph from '../../Typography/Paragraph';
 
 import { useSelector } from 'react-redux';
