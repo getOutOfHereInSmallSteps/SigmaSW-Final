@@ -18,8 +18,7 @@ import { db } from '../../firebase/firebase';
 
 const addProduct = async productData => {
   try {
-    const docRef = await addDoc(collection(db, 'orders'), productData);
-    console.log('Product added with ID: ', docRef.id);
+    await addDoc(collection(db, 'orders'), productData);
   } catch (error) {
     console.error('Error adding product: ', error);
   }
