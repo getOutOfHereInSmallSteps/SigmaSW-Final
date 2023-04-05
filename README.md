@@ -18,7 +18,7 @@ The landing page can be accessed either by visiting the [link](https://organickd
 
 # Implementation details
 
-The Organick Landing Page was built using ReactJS in a component-driven, functional style. Each section and page element is split into smaller, reusable components. The product section is the center of functionality, and product data, including images, are loaded dynamically from the Firebase Store. The user order functionality is implemented using state, Redux, CSSTransition component, and validation logic. The submission form has a list of the desired products with the ability to manipulate the state. The order confirmation process includes a success page or an error page.
+The Organick Landing Page was built using ReactJS in a component-driven, functional style. Each section and page element is split into smaller, reusable components. The product section is the center of functionality, and product data, including images, are loaded dynamically from the Firebase Store. The user order functionality is implemented using state, Redux, CSSTransition component, and validation logic. The submission form has a list of the desired products with the ability to manipulate the state. The order confirmation process includes a success page or an error page. After submission, user data is stored on the firebase in a separate collection.
 
 ---
 
