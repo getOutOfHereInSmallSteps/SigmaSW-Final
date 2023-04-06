@@ -130,7 +130,10 @@ const ProductForm = props => {
           </div>
           <Button
             hideArrow
-            onClick={props.onClose}
+            onClick={() => {
+              props.onClose();
+              setTimeout(() => setIsSubmitted(false), 300);
+            }}
             className="absolute top-0 right-0"
           >
             X
