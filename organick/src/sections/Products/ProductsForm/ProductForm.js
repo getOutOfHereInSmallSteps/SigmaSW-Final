@@ -26,11 +26,11 @@ const ProductForm = props => {
   const productsAmount = useRef();
 
   useEffect(() => {
-    if (props.shown) {
+    if (props.show) {
       document.body.classList.add('remove-scroll');
     }
     return () => document.body.classList.remove('remove-scroll');
-  }, [props.shown]);
+  }, [props.show]);
 
   const addToCartHandler = () => {
     const selectedProductAmount = +productsAmount.current.value;
