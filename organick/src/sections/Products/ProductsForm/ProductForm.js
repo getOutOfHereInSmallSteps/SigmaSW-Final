@@ -52,7 +52,7 @@ const ProductForm = props => {
   };
 
   const inputChangeHandler = e => {
-    if (!isNaN(+e.target.value) || e.target.value === '') {
+    if (!isNaN(+e.target.value) || e.target.value === 1) {
       setIsSubmitted(false);
       setInputQuantity(e.target.value);
     }
