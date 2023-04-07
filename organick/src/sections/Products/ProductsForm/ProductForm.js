@@ -52,8 +52,10 @@ const ProductForm = props => {
   };
 
   const inputChangeHandler = e => {
-    setIsSubmitted(false);
-    setInputQuantity(e.target.value);
+    if (!isNaN(+e.target.value) || e.target.value === '') {
+      setIsSubmitted(false);
+      setInputQuantity(e.target.value);
+    }
   };
 
   return (
@@ -132,6 +134,7 @@ const ProductForm = props => {
             hideArrow
             onClick={() => {
               props.onClose();
+              setInputQuantity(1);
               setTimeout(() => setIsSubmitted(false), 300);
             }}
             className="absolute top-0 right-0"

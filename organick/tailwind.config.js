@@ -9,9 +9,9 @@ module.exports = {
         'auto-fill-minmax': 'repeat(auto-fill, minmax(30rem, 1fr))',
       },
       animation: {
-        fade: 'fade-in 0.7s ease-out',
-        enter: 'enter 0.4s ease-out',
-        leave: 'leave 0.4s ease-out',
+        fade: 'fade-in 0.7s ease-out forwards',
+        enter: 'enter 0.4s ease-out forwards',
+        leave: 'leave 0.4s ease-out forwards',
       },
       keyframes: {
         'fade-in': {

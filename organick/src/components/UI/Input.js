@@ -7,7 +7,6 @@ const Input = React.forwardRef((props, ref) => {
     <div className="flex flex-wrap gap-[2rem] items-center">
       <label className="font-roboto font-bold text-[2rem]">Quantity :</label>
       <input
-        type="number"
         min={0}
         max={99}
         step={1}
