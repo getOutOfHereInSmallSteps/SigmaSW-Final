@@ -21,7 +21,7 @@ const Button = props => {
   return (
     <a
       href="/"
-      className={`font-roboto py-[2.8rem] px-[4rem]  flex rounded-3xl  text-[2rem] font-bold items-center gap-4 w-[fit-content] transition duration-300 ${
+      className={`font-roboto py-12 px-16 rounded-3xl text-4xl font-bold flex items-center gap-4 w-fit transition duration-300 ${
         props.className
       } ${
         btnStyles[props.type] ||

@@ -6,7 +6,7 @@ import GalleryItem from './GalleryItem';
 const Gallery = () => {
   return (
     <FadeInSection>
-      <div className="flex flex-wrap gap-[4.2rem] bg-color-primary-green-tint py-[18.7rem] mb-[17rem]">
+      <div className="flex flex-wrap gap-16 bg-color-primary-green-tint py-72 mb-16">
         <GalleryItem className="bg-[url('./imgs/gallery-1.png')]">
           Organic Juice
         </GalleryItem>

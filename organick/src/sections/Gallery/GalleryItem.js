@@ -1,16 +1,17 @@
 import React from 'react';
 
+import Flex from '../../components/UI/Flex';
 import Heading from '../../components/Typography/Heading';
 
 const GalleryItem = props => {
   return (
-    <div
-      className={`h-[58rem] min-w-[40rem] flex justify-center items-center bg-cover ${props.className} flex-grow `}
+    <Flex
+      className={`h-[58rem] min-w-[40rem] flex-grow bg-cover ${props.className}`}
     >
-      <div className="bg-color-white rounded-[30px] py-[3.4rem] px-[8.2rem] ">
+      <div className="bg-color-white rounded-[30px] py-12 px-32">
         <Heading>{props.children}</Heading>
       </div>
-    </div>
+    </Flex>
   );
 };
 

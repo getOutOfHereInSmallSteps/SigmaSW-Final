@@ -7,7 +7,7 @@ import Banner from './Banner';
 const BannersSection = () => {
   return (
     <FadeInSection>
-      <FlexContainer className="gap-[3.6rem] mb-[19rem] flex-wrap px-4">
+      <FlexContainer className="gap-14 mb-80 flex-wrap px-4">
         <Banner
           heading="Get Garden Fresh Fruits"
           subheading="Natural!!"

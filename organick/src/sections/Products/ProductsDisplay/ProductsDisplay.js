@@ -6,8 +6,6 @@ import { CSSTransition } from 'react-transition-group';
 import Container from '../../../components/UI/Container';
 import Flex from '../../../components/UI/Flex';
 import Button from '../../../components/UI/Button';
-import Product from './Product';
-
 import ProductsPage from './ProductsPage';
 
 const ProductsDisplay = props => {

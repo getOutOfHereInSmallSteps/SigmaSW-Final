@@ -12,12 +12,13 @@ import aboutImg from '../../imgs/about.png';
 
 import { ReactComponent as BowlIcon } from '../../svg/bowl.svg';
 import { ReactComponent as MailboxIcon } from '../../svg/mailbox.svg';
+
 import FadeInSection from '../../components/Animations/FadeInSection';
 
 const AboutSection = () => {
   return (
     <FadeInSection>
-      <div className="bg-color-background-light-gray py-[20rem]">
+      <div className="bg-color-background-light-gray py-80">
         <Container className="flex items-center max-lg:justify-center">
           <div className="shrink grow-0 max-w-[80rem]">
             <img
@@ -28,21 +29,17 @@ const AboutSection = () => {
           </div>
           <div className="basis-3/6">
             <Subheading>About Us</Subheading>
-            <Heading className="mb-[1.6rem] text-[5rem]">
+            <Heading className="mb-6 text-7xl">
               We Believe in Working Accredited Farmers
             </Heading>
-            <Paragraph className="mb-[4.2rem]">
+            <Paragraph className="mb-16">
               Simply dummy text of the printing and typesetting industry. Lorem
               had ceased to been the industry's standard dummy text ever since
               the 1500s, when an unknown printer took a galley.
             </Paragraph>
 
-            <List className="mb-[4.2rem]">
-              <ListItem
-                heading="Organic Food Only"
-                icon={<MailboxIcon />}
-                className="mb-[3.2rem]"
-              >
+            <List className="mb-16 gap-12">
+              <ListItem heading="Organic Food Only" icon={<MailboxIcon />}>
                 Simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum
               </ListItem>
