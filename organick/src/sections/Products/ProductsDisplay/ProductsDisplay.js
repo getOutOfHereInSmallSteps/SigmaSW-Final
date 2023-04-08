@@ -9,6 +9,7 @@ import Product from './Product';
 
 const ProductsDisplay = props => {
   const [isShownMore, setIsShownMore] = useState(false);
+  const secondPage = useRef();
 
   const productsQuantity = props.products.length;
 
@@ -17,52 +18,54 @@ const ProductsDisplay = props => {
 
   const toggleShowMoreHandler = () => {
     if (isShownMore)
-      props.productsRef.current.scrollIntoView({ behavior: 'smooth' });
+      props.productsRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
     setIsShownMore(prevState => !prevState);
   };
 
   return (
     <React.Fragment>
-      <Container className="grid grid-cols-auto-fill-minmax gap-[2rem] mb-[2rem]">
-        {productsPageOne.map(product => (
-          <Product productsData={product} onSelectItem={props.onSelect} />
-        ))}
-      </Container>
-
-      {/* {isShownMore &&
-          productsPageTwo.map(product => (
+      <Container>
+        <div className="grid grid-cols-auto-fill-minmax gap-[2rem] mb-[2rem]">
+          {productsPageOne.map(product => (
             <Product
-              type={product.type}
-              name={product.name}
-              price={product.price}
-              discount={product.discount}
+              productsData={product}
               onSelectItem={props.onSelect}
               key={product.id}
-              id={product.id}
-              link={product.link}
             />
-          ))} */}
-      <CSSTransition
-        in={isShownMore}
-        timeout={{
-          enter: 700,
-          exit: 700,
-        }}
-        classNames={{
-          enter: '',
-          enterActive: 'animate-fade-in',
-          exit: '',
-          exitActive: 'animate-fade-out',
-        }}
-        mountOnEnter
-        unmountOnExit
-      >
-        <Container className="grid grid-cols-auto-fill-minmax gap-[2rem] mb-[4.8rem]">
-          {productsPageTwo.map(product => (
-            <Product productsData={product} onSelectItem={props.onSelect} />
           ))}
-        </Container>
-      </CSSTransition>
+        </div>
+
+        <CSSTransition
+          in={isShownMore}
+          timeout={{
+            enter: 700,
+            exit: 700,
+          }}
+          nodeRef={secondPage}
+          classNames={{
+            enter: '',
+            enterActive: 'animate-fade-in',
+            exit: '',
+            exitActive: 'animate-fade-out',
+          }}
+          mountOnEnter
+          unmountOnExit
+        >
+          <div className="grid grid-cols-auto-fill-minmax gap-[2rem] mb-[4.8rem]">
+            {productsPageTwo.map(product => (
+              <Product
+                productsData={product}
+                onSelectItem={props.onSelect}
+                key={product.id}
+              />
+            ))}
+          </div>
+        </CSSTransition>
+      </Container>
       <div className="flex justify-center">
         <Button onClick={toggleShowMoreHandler}>
           {isShownMore ? 'Hide All' : 'Load More'}
