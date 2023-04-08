@@ -5,7 +5,7 @@ import { ReactComponent as Rating } from '../../../svg/product-rating.svg';
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../../store';
 
-import { useRef } from 'react';
+import { useRef, createRef } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
@@ -24,6 +24,7 @@ const ProductForm = props => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const dispatch = useDispatch();
   const productsAmount = useRef();
+  const formModalRef = useRef();
 
   useEffect(() => {
     if (props.show) {
@@ -65,6 +66,7 @@ const ProductForm = props => {
         enter: 400,
         exit: 400,
       }}
+      nodeRef={formModalRef}
       classNames={{
         enter: '',
         enterActive: 'animate-enter',
@@ -74,7 +76,10 @@ const ProductForm = props => {
       mountOnEnter
       unmountOnExit
     >
-      <div className="z-20 fixed top-1/2 -translate-y-1/2 w-full p-4 bg-[#fffafa] h-full overflow-scroll">
+      <div
+        className="z-20 fixed top-1/2 -translate-y-1/2 w-full p-4 bg-[#fffafa] h-full overflow-scroll"
+        ref={formModalRef}
+      >
         <Container className="relative">
           <div className="flex items-center justify-around mb-[9rem]">
             <div
