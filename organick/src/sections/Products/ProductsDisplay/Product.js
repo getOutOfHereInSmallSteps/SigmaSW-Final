@@ -13,7 +13,7 @@ const Product = props => {
   console.log(props.productsData);
   return (
     <div
-      className={`flex flex-col  h-[48rem] p-[3rem] rounded-[30px] bg-color-background-light-gray cursor-pointer ${props.className}`}
+      className={`flex flex-col h-[48rem] p-12 rounded-[30px] bg-color-background-light-gray cursor-pointer ${props.className}`}
       onClick={() => props.onSelectItem(props.productsData?.id)}
     >
       <ProductTag>{props.productsData?.type}</ProductTag>
@@ -21,7 +21,7 @@ const Product = props => {
         style={productImgBackground}
         className={`bg-contain bg-no-repeat bg-center bg-color-background-light-gray bg-blend-multiply w-full h-full`}
       ></div>
-      <Heading className="text-[2.4rem] mb-[1.2rem]">
+      <Heading className="text-[2.4rem] mb-4">
         {props.productsData?.name}
       </Heading>
       <hr className="w-full border border-solid border-color-black mb-4 opacity-10" />

@@ -4,12 +4,16 @@ import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import Container from '../../../components/UI/Container';
+import Flex from '../../../components/UI/Flex';
 import Button from '../../../components/UI/Button';
 import Product from './Product';
+
+import ProductsPage from './ProductsPage';
 
 const ProductsDisplay = props => {
   const [isShownMore, setIsShownMore] = useState(false);
   const secondPage = useRef();
+  const firstPage = useRef();
 
   const productsQuantity = props.products.length;
 
@@ -18,7 +22,7 @@ const ProductsDisplay = props => {
 
   const toggleShowMoreHandler = () => {
     if (isShownMore)
-      props.productsRef.current.scrollIntoView({
+      firstPage.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest',
@@ -29,15 +33,11 @@ const ProductsDisplay = props => {
   return (
     <React.Fragment>
       <Container>
-        <div className="grid grid-cols-auto-fill-minmax gap-[2rem] mb-[2rem]">
-          {productsPageOne.map(product => (
-            <Product
-              productsData={product}
-              onSelectItem={props.onSelect}
-              key={product.id}
-            />
-          ))}
-        </div>
+        <ProductsPage
+          ref={firstPage}
+          collection={productsPageOne}
+          onSelect={props.onSelect}
+        />
 
         <CSSTransition
           in={isShownMore}
@@ -55,22 +55,18 @@ const ProductsDisplay = props => {
           mountOnEnter
           unmountOnExit
         >
-          <div className="grid grid-cols-auto-fill-minmax gap-[2rem] mb-[4.8rem]">
-            {productsPageTwo.map(product => (
-              <Product
-                productsData={product}
-                onSelectItem={props.onSelect}
-                key={product.id}
-              />
-            ))}
-          </div>
+          <ProductsPage
+            ref={secondPage}
+            onSelect={props.onSelect}
+            collection={productsPageTwo}
+          />
         </CSSTransition>
       </Container>
-      <div className="flex justify-center">
+      <Flex>
         <Button onClick={toggleShowMoreHandler}>
           {isShownMore ? 'Hide All' : 'Load More'}
         </Button>
-      </div>
+      </Flex>
     </React.Fragment>
   );
 };
