@@ -16,7 +16,7 @@ const FadeInSection = props => {
   }, [inView]);
 
   return (
-    <div ref={ref} className={`${isVisible ? 'animate-fade' : ''}`}>
+    <div ref={ref} className={`${isVisible ? 'animate-fade-in' : ''}`}>
       {props.children}
     </div>
   );

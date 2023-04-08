@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import FadeInSection from '../../../components/Animations/FadeInSection';
 
@@ -14,6 +14,7 @@ const ProductsSection = () => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
   const productsData = useSelector(state => state.products.list);
+  const productsRef = useRef();
 
   const selectItemHandler = productId => {
     const selectedItem = productsData.find(element => element.id === productId);
@@ -27,13 +28,17 @@ const ProductsSection = () => {
 
   return (
     <FadeInSection>
-      <div className="mb-[20rem] relative">
+      <div className="mb-[20rem] relative pt-[18rem]" ref={productsRef}>
         <Subheading className="text-center">Categories</Subheading>
         <Heading className="text-center mb-[4rem] text-[5rem]">
           Our Products
         </Heading>
 
-        <ProductsDisplay onSelect={selectItemHandler} products={productsData} />
+        <ProductsDisplay
+          onSelect={selectItemHandler}
+          products={productsData}
+          productsRef={productsRef}
+        />
 
         <ProductForm
           selectedProduct={activeItem}

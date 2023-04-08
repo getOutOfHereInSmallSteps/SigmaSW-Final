@@ -17,7 +17,7 @@ import FadeInSection from '../../components/Animations/FadeInSection';
 const AboutSection = () => {
   return (
     <FadeInSection>
-      <div className="bg-color-background-light-gray py-[20rem] mb-[18rem]">
+      <div className="bg-color-background-light-gray py-[20rem]">
         <Container className="flex items-center max-lg:justify-center">
           <div className="shrink grow-0 max-w-[80rem]">
             <img

@@ -5,7 +5,7 @@ import { ReactComponent as Rating } from '../../../svg/product-rating.svg';
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../../store';
 
-import { useRef, createRef } from 'react';
+import { useRef } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
@@ -69,9 +69,9 @@ const ProductForm = props => {
       nodeRef={formModalRef}
       classNames={{
         enter: '',
-        enterActive: 'animate-enter',
+        enterActive: 'animate-modal-enter',
         exit: '',
-        exitActive: 'animate-leave',
+        exitActive: 'animate-modal-leave',
       }}
       mountOnEnter
       unmountOnExit

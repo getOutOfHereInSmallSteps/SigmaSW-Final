@@ -9,9 +9,10 @@ module.exports = {
         'auto-fill-minmax': 'repeat(auto-fill, minmax(30rem, 1fr))',
       },
       animation: {
-        fade: 'fade-in 0.7s ease-out forwards',
-        enter: 'enter 0.4s ease-out forwards',
-        leave: 'leave 0.4s ease-out forwards',
+        'fade-in': 'fade-in 0.7s ease-out forwards',
+        'fade-out': 'fade-out 0.7s ease-out forwards',
+        'modal-enter': 'enter 0.4s ease-out forwards',
+        'modal-leave': 'leave 0.4s ease-out forwards',
       },
       keyframes: {
         'fade-in': {
@@ -20,6 +21,14 @@ module.exports = {
           },
           '100%': {
             opacity: '1',
+          },
+        },
+        'fade-out': {
+          '0%': {
+            opacity: '1',
+          },
+          '100%': {
+            opacity: '0',
           },
         },
         enter: {
@@ -35,9 +44,12 @@ module.exports = {
         },
         leave: {
           '0%': {
+            transform: 'translateY(-50%)',
+            top: '50%',
             opacity: '1',
           },
           '100%': {
+            top: '0',
             opacity: '0',
           },
         },
