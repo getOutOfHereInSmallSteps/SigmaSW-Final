@@ -6,12 +6,12 @@ import Subheading from '../../components/Typography/Subheading';
 const Banner = props => {
   return (
     <div
-      className={` bg-cover max-w-[68rem] min-w-[50rem] max-sm:min-w-[20rem] py-48 px-20 rounded-[30px] grow ${props.bg}`}
+      className={` min-w-[50rem] max-w-[68rem] grow rounded-[30px] bg-cover px-20 py-48 max-sm:min-w-[20rem] ${props.bg}`}
     >
       <Subheading className={`text-6xl ${props.className}`}>
         {props.subheading}
       </Subheading>
-      <Heading className={`text-7xl max-w-[30rem] ${props.className}`}>
+      <Heading className={`max-w-[30rem] text-7xl ${props.className}`}>
         {props.heading}
       </Heading>
     </div>

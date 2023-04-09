@@ -12,7 +12,7 @@ const News = () => {
   return (
     <FadeInSection>
       <Container className="mb-[20rem]">
-        <div className="flex justify-between mb-[4.8rem] flex-wrap gap-8">
+        <div className="mb-[4.8rem] flex flex-wrap justify-between gap-8">
           <div className="max-w-[70rem]">
             <Subheading>News</Subheading>
             <Heading className="text-[5rem]">
@@ -24,7 +24,7 @@ const News = () => {
           </Button>
         </div>
 
-        <div className="flex gap-[4.8rem] justify-between flex-wrap">
+        <div className="flex flex-wrap justify-between gap-[4.8rem]">
           <NewsPiece
             heading="The Benefits of Vitamin D & How to Get It"
             description="Simply dummy text of the printing and typesetting industry. Lorem Ipsum"

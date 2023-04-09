@@ -9,11 +9,11 @@ import FadeInSection from '../../components/Animations/FadeInSection';
 const WhoWeAre = () => {
   return (
     <FadeInSection>
-      <div className="bg-[url('./imgs/whoweare.jpg')] bg-no-repeat bg-contain py-40 mb-40">
+      <div className="mb-40 bg-[url('./imgs/whoweare.jpg')] bg-contain bg-no-repeat py-40">
         <FlexContainer>
-          <div className="bg-color-white rounded-[30px] p-32 max-w-[80rem] justify-self-end">
+          <div className="max-w-[80rem] justify-self-end rounded-[30px] bg-color-white p-32">
             <Subheading>Eco Friendly</Subheading>
-            <Heading className="text-7xl mb-16">
+            <Heading className="mb-16 text-7xl">
               Econis is a Friendly Organic Store
             </Heading>
             <List className="gap-14">

@@ -3,7 +3,7 @@ import React from 'react';
 const FlexContainer = props => {
   return (
     <div
-      className={`flex justify-center max-w-[150rem] mx-auto ${props.className}`}
+      className={`mx-auto flex max-w-[150rem] justify-center ${props.className}`}
     >
       {props.children}
     </div>

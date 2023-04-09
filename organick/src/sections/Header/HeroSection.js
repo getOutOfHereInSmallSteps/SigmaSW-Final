@@ -13,7 +13,7 @@ const HeroSection = () => {
       <HeroContainer>
         <Container className="flex-1">
           <Subheading>100% Natural Food</Subheading>
-          <Heading className="text-9xl mb-10 max-w-[52rem] max-lg:text-8xl">
+          <Heading className="mb-10 max-w-[52rem] text-9xl max-lg:text-8xl">
             Choose the best healthier way of life
           </Heading>
           <Button type="yellow">Explore Now</Button>

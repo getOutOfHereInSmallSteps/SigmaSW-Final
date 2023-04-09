@@ -20,7 +20,7 @@ const AboutSection = () => {
     <FadeInSection>
       <div className="bg-color-background-light-gray py-80">
         <Container className="flex items-center max-lg:justify-center">
-          <div className="shrink grow-0 max-w-[80rem]">
+          <div className="max-w-[80rem] shrink grow-0">
             <img
               src={aboutImg}
               alt="A pile of oranges, grapefruits and lime"

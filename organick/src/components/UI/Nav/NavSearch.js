@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 
 const NavSearch = () => {
   return (
-    <div className="bg-[#fafafa] flex items-center p-2 pl-8 rounded-[30px] gap-4 max-xl:bg-[transparent] max-md:hidden">
+    <div className="flex items-center gap-4 rounded-[30px] bg-[#fafafa] p-2 pl-8 max-xl:bg-[transparent] max-md:hidden">
       <input
-        className="bg-[transparent] text-[1.8rem] leading-relaxed outline-none max-w-[20rem] shrink max-xl:hidden"
+        className="max-w-[20rem] shrink bg-[transparent] text-[1.8rem] leading-relaxed outline-none max-xl:hidden"
         type="text"
       />
-      <Link className="shrink-0 bg-[#7eb693] p-6 rounded-full">
+      <Link className="shrink-0 rounded-full bg-[#7eb693] p-6">
         <SearchIcon />
       </Link>
     </div>

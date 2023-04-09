@@ -8,7 +8,7 @@ const GalleryItem = props => {
     <Flex
       className={`h-[58rem] min-w-[40rem] flex-grow bg-cover ${props.className}`}
     >
-      <div className="bg-color-white rounded-[30px] py-12 px-32">
+      <div className="rounded-[30px] bg-color-white px-32 py-12">
         <Heading>{props.children}</Heading>
       </div>
     </Flex>

@@ -8,7 +8,7 @@ const CartButton = props => {
   return (
     <Link
       to="form"
-      className={`bg-color-primary-blue p-6 rounded-full max-md:p-10 max-md:border-solid max-md:border-1 max-md:border-color-white ${props.className}`}
+      className={`max-md:border-1 rounded-full bg-color-primary-blue p-6 max-md:border-solid max-md:border-color-white max-md:p-10 ${props.className}`}
     >
       <CartIcon />
     </Link>

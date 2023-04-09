@@ -28,9 +28,9 @@ const ProductsSection = () => {
 
   return (
     <FadeInSection>
-      <div className="mb-[20rem] relative pt-[18rem]" ref={productsRef}>
+      <div className="relative mb-[20rem] pt-[18rem]" ref={productsRef}>
         <Subheading className="text-center">Categories</Subheading>
-        <Heading className="text-center mb-[4rem] text-[5rem]">
+        <Heading className="mb-[4rem] text-center text-[5rem]">
           Our Products
         </Heading>
 

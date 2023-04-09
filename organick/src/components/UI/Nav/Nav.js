@@ -12,7 +12,7 @@ import MenuBurger from './MenuBurger';
 
 const Nav = () => {
   return (
-    <nav className="max-w-[170rem] h-[15vh] mx-auto flex justify-between items-center px-4">
+    <nav className="mx-auto flex h-[15vh] max-w-[170rem] items-center justify-between px-4">
       <Logo />
 
       <ul className="flex gap-12 max-md:hidden">

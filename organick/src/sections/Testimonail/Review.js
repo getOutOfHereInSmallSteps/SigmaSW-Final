@@ -9,20 +9,20 @@ import { ReactComponent as Stars } from '../../svg/Stars.svg';
 
 const Review = () => {
   return (
-    <div className="flex flex-col items-center mb-[10rem]">
-      <Subheading className="text-[3.6rem] mb-4">Testimonail</Subheading>
-      <Heading className="text-[5rem] mb-[6rem] text-center">
+    <div className="mb-[10rem] flex flex-col items-center">
+      <Subheading className="mb-4 text-[3.6rem]">Testimonail</Subheading>
+      <Heading className="mb-[6rem] text-center text-[5rem]">
         What Our Customer Saying?
       </Heading>
-      <img src={UserAvatar} className="rounded-full mb-8" alt="User Avatar" />
+      <img src={UserAvatar} className="mb-8 rounded-full" alt="User Avatar" />
       <Stars className="mb-8" />
-      <Paragraph className="max-w-[78rem] text-center leading-relaxed mb-8">
+      <Paragraph className="mb-8 max-w-[78rem] text-center leading-relaxed">
         Simply dummy text of the printing and typesetting industry. Lorem Ipsum
         simply dummy text of the printing and typesetting industry. Lorem Ipsum
         has been.
       </Paragraph>
       <Heading>Sara Taylor</Heading>
-      <Paragraph className="leading-relaxed mb-8">Consumer</Paragraph>
+      <Paragraph className="mb-8 leading-relaxed">Consumer</Paragraph>
       <img src={Controls} alt="" />
     </div>
   );

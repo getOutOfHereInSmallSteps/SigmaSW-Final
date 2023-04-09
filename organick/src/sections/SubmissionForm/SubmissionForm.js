@@ -103,7 +103,7 @@ const SubmissionForm = props => {
   return (
     <Container className="mb-[10rem] px-0">
       <form onSubmit={submitHandler} className="mb-[12rem]">
-        <div className="grid grid-cols-2 max-md:grid-cols-1 gap-[5rem] mb-[5rem]">
+        <div className="mb-[5rem] grid grid-cols-2 gap-[5rem] max-md:grid-cols-1">
           <FormInput
             label={'Full Name*'}
             inptType={'text'}

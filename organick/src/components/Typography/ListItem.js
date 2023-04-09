@@ -9,13 +9,13 @@ const ListItem = props => {
     <li className={props.className}>
       <Flex className="gap-4">
         {!props.hideIcon && (
-          <div className="w-40 h-40 bg-color-white shrink-0 rounded-[20px] flex justify-center items-center">
+          <div className="flex h-40 w-40 shrink-0 items-center justify-center rounded-[20px] bg-color-white">
             {props.icon}
           </div>
         )}
 
         <div>
-          <Heading className="text-4xl mb-4 w-fit">{props.heading}</Heading>
+          <Heading className="mb-4 w-fit text-4xl">{props.heading}</Heading>
           <Paragraph className="w-fit">{props.children}</Paragraph>
         </div>
       </Flex>

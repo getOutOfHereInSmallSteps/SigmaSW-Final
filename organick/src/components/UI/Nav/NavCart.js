@@ -9,7 +9,7 @@ const NavCart = () => {
   const cartCounter = useSelector(state => state.cart.productsQuantity);
 
   return (
-    <div className="flex gap-4 items-center border border-solid border-[#e0e0e0] rounded-[33px] p-2 pr-8 max-xl:border-none max-md:fixed max-md:bottom-10 max-md:right-10 max-md:p-0 z-30">
+    <div className="z-30 flex items-center gap-4 rounded-[33px] border border-solid border-[#e0e0e0] p-2 pr-8 max-xl:border-none max-md:fixed max-md:bottom-10 max-md:right-10 max-md:p-0">
       <CartButton />
       <Paragraph className="font-semibold text-color-primary-blue max-xl:hidden">
         Cart (

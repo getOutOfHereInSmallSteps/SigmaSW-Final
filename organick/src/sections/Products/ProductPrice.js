@@ -3,10 +3,10 @@ import React from 'react';
 const ProductPrice = props => {
   return (
     <span
-      className={`font-opensans font-bold text-[1.8rem] text-color-primary-blue ${props.className}`}
+      className={`font-opensans text-[1.8rem] font-bold text-color-primary-blue ${props.className}`}
     >
       {props.discount !== 0 && (
-        <span className="font-opensans font-semibold text-[1.6rem] text-color-discount line-through mr-[0.5rem]">
+        <span className="mr-[0.5rem] font-opensans text-[1.6rem] font-semibold text-color-discount line-through">
           ${(+props.price).toFixed(2)}
         </span>
       )}

@@ -4,13 +4,13 @@ import Button from '../UI/Button';
 
 const Input = React.forwardRef((props, ref) => {
   return (
-    <div className="flex flex-wrap gap-[2rem] items-center">
-      <label className="font-roboto font-bold text-[2rem]">Quantity :</label>
+    <div className="flex flex-wrap items-center gap-[2rem]">
+      <label className="font-roboto text-[2rem] font-bold">Quantity :</label>
       <input
         min={0}
         max={99}
         step={1}
-        className={`inline-block py-[3rem] px-[6rem] w-[17rem] bg-color-white border-solid border-2 border-color-primary-blue rounded-[16px] font-roboto font-bold text-[2rem] transition duration-300 ${props.className}`}
+        className={`inline-block w-[17rem] rounded-[16px] border-2 border-solid border-color-primary-blue bg-color-white px-[6rem] py-[3rem] font-roboto text-[2rem] font-bold transition duration-300 ${props.className}`}
         ref={ref}
         value={props.inputQuantity}
         onChange={props.inputChangeHandler}

@@ -6,7 +6,7 @@ import { ReactComponent as OrganickLogo } from '../../svg/Logo.svg';
 
 const Logo = props => {
   return (
-    <Flex className={`gap-4 items-center ${props.className}`}>
+    <Flex className={`items-center gap-4 ${props.className}`}>
       <OrganickLogo />
       <Heading className="text-[3.8rem]">Organick</Heading>
     </Flex>

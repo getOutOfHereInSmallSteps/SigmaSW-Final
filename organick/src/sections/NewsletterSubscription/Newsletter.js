@@ -9,16 +9,16 @@ const Newsletter = () => {
   return (
     <FadeInSection>
       <Container>
-        <div className="py-[10rem] px-[7rem] max-md:px-[2.4rem] w-full rounded-[30px] bg-[url('./imgs/newsletter-bg.jpg')] flex justify-between gap-8 flex-wrap items-center mb-[20rem]">
-          <Heading className="text-[5rem] text-color-white max-w-[36rem]">
+        <div className="mb-[20rem] flex w-full flex-wrap items-center justify-between gap-8 rounded-[30px] bg-[url('./imgs/newsletter-bg.jpg')] px-[7rem] py-[10rem] max-md:px-[2.4rem]">
+          <Heading className="max-w-[36rem] text-[5rem] text-color-white">
             Subscribe to our Newsletter
           </Heading>
 
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex flex-wrap gap-4">
             <input
               type="text"
               placeholder="Your Email Address"
-              className="p-[2rem] rounded-[16px] text-[1.8rem]"
+              className="rounded-[16px] p-[2rem] text-[1.8rem]"
             ></input>
             <Button hideArrow>Subscribe</Button>
           </div>

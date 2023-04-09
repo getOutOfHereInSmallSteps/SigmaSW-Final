@@ -5,9 +5,9 @@ import Heading from '../../Typography/Heading';
 const FooterCol = props => {
   return (
     <div
-      className={`border-solid border-t-0 border-b-0 px-[5rem] ${props.className}`}
+      className={`border-b-0 border-t-0 border-solid px-[5rem] ${props.className}`}
     >
-      <Heading className="text-[3rem] mb-10">{props.heading}</Heading>
+      <Heading className="mb-10 text-[3rem]">{props.heading}</Heading>
       <ul className="flex flex-col gap-10">{props.children}</ul>
     </div>
   );

@@ -8,18 +8,18 @@ import { ReactComponent as UserIcon } from '../../svg/user-icon.svg';
 const NewsPiece = props => {
   return (
     <div
-      className={`h-[52rem] bg-[url('./imgs/news-1.png')] bg-cover bg-center bg-no-repeat p-[3.2rem] rounded-[30px] grow shrink basis-0 min-w-[42rem] flex flex-col justify-between max-sm:min-w-[34rem] ${props.className}`}
+      className={`flex h-[52rem] min-w-[42rem] shrink grow basis-0 flex-col justify-between rounded-[30px] bg-[url('./imgs/news-1.png')] bg-cover bg-center bg-no-repeat p-[3.2rem] max-sm:min-w-[34rem] ${props.className}`}
     >
-      <div className="bg-color-white w-[8rem] h-[8rem] rounded-full flex items-center justify-center flex-col">
+      <div className="flex h-[8rem] w-[8rem] flex-col items-center justify-center rounded-full bg-color-white">
         <Heading className="text-[2.5rem]">25</Heading>
         <Heading className="text-[2.5rem]">Nov</Heading>
       </div>
 
-      <div className="rounded-[30px] p-[4.2rem]  bg-color-white translate-y-[25%] shadow-xl">
+      <div className="translate-y-[25%] rounded-[30px]  bg-color-white p-[4.2rem] shadow-xl">
         <Paragraph className="mb-4 flex gap-4">
           <UserIcon /> By {props.author}
         </Paragraph>
-        <Heading className="text-[2.4rem] mb-4">{props.heading}</Heading>
+        <Heading className="mb-4 text-[2.4rem]">{props.heading}</Heading>
         <Paragraph className="mb-[1.6rem]">{props.description}</Paragraph>
         <Button type="yellow">Read More</Button>
       </div>

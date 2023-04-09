@@ -21,11 +21,11 @@ const Button = props => {
   return (
     <a
       href="/"
-      className={`font-roboto py-12 px-16 rounded-3xl text-4xl font-bold flex items-center gap-4 w-fit transition duration-300 ${
+      className={`flex w-fit items-center gap-4 rounded-3xl px-16 py-12 font-roboto text-4xl font-bold transition duration-300 ${
         props.className
       } ${
         btnStyles[props.type] ||
-        'text-color-white bg-color-primary-blue hover:bg-[#3d5e6b] active:bg-[#234452]'
+        'bg-color-primary-blue text-color-white hover:bg-[#3d5e6b] active:bg-[#234452]'
       }`}
       onClick={clickHandler}
     >

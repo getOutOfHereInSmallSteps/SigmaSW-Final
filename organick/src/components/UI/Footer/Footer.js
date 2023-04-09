@@ -14,10 +14,10 @@ import FooterCol from './FooterCol';
 const Footer = () => {
   return (
     <footer>
-      <FlexContainer className="justify-between max-w-[140rem] mb-[12rem] items-stretch  max-lg:flex-col max-lg:items-start max-lg:gap-20 max-lg:items-center">
+      <FlexContainer className="mb-[12rem] max-w-[140rem] items-stretch justify-between  max-lg:flex-col max-lg:items-start max-lg:items-center max-lg:gap-20">
         <FooterCol
           heading="Contact us"
-          className="text-right border-l-0 border-r border-r-gray-500 max-lg:border-none max-lg:text-left"
+          className="border-r-gray-500 border-l-0 border-r text-right max-lg:border-none max-lg:text-left"
         >
           <li>
             <Paragraph className="font-[700]">Email</Paragraph>
@@ -37,22 +37,22 @@ const Footer = () => {
 
         <div className="flex flex-col items-center ">
           <Logo className="mb-[2.4rem]" />
-          <Paragraph className="max-w-[50rem] text-center mb-[5rem]">
+          <Paragraph className="mb-[5rem] max-w-[50rem] text-center">
             Simply dummy text of the printing and typesetting industry. Lorem
             Ipsum simply dummy text of the printing
           </Paragraph>
 
           <div className="flex gap-8">
-            <div className="rounded-full bg-color-primary-green-tint w-[6rem] h-[6rem] flex items-center justify-center">
+            <div className="flex h-[6rem] w-[6rem] items-center justify-center rounded-full bg-color-primary-green-tint">
               <InstagramLogo />
             </div>
-            <div className="rounded-full bg-color-primary-green-tint w-[6rem] h-[6rem] flex items-center justify-center">
+            <div className="flex h-[6rem] w-[6rem] items-center justify-center rounded-full bg-color-primary-green-tint">
               <FacebookLogo />
             </div>
-            <div className="rounded-full bg-color-primary-green-tint w-[6rem] h-[6rem] flex items-center justify-center">
+            <div className="flex h-[6rem] w-[6rem] items-center justify-center rounded-full bg-color-primary-green-tint">
               <TwitterLogo />
             </div>
-            <div className="rounded-full bg-color-primary-green-tint w-[6rem] h-[6rem] flex items-center justify-center">
+            <div className="flex h-[6rem] w-[6rem] items-center justify-center rounded-full bg-color-primary-green-tint">
               <PinterestLogo />
             </div>
           </div>
@@ -60,7 +60,7 @@ const Footer = () => {
 
         <FooterCol
           heading="Utility Pages"
-          className="text-left border-r-0 border-l border-l-gray-500 max-lg:border-none"
+          className="border-l-gray-500 border-l border-r-0 text-left max-lg:border-none"
         >
           <li>
             <Paragraph>Style Guide</Paragraph>
@@ -79,7 +79,7 @@ const Footer = () => {
           </li>
         </FooterCol>
       </FlexContainer>
-      <hr className="w-full border opacity-10 border-solid mb-[1.6rem]" />
+      <hr className="mb-[1.6rem] w-full border border-solid opacity-10" />
       <FooterCopyright />
     </footer>
   );
