@@ -22,7 +22,14 @@ The Organick Landing Page was built using ReactJS in a component-driven, functio
 
 # Important note
 
-Considering the deadline, hotfixes and new features implementations to the project will be commited to the new after-deadline branch. This may affect the display of the hosted page.
+Considering the deadline, hotfixes and new features implementations to the project will be commited to the new after-deadline branch. This may affect the display of the hosted page. 
+
+The changes include: 
+
+- Small fixes 
+- Additional animations
+- Improved pagination, that involves limited data fetcthing (in progress)
+- Code refactoring and other optimisations (in progress)
 
 ---
 
