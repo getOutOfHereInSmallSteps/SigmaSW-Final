@@ -77,19 +77,19 @@ const ProductForm = props => {
       unmountOnExit
     >
       <div
-        className="z-20 fixed top-1/2 -translate-y-1/2 w-full p-4 bg-[#fffafa] h-full overflow-scroll"
+        className="fixed top-1/2 z-20 h-full w-full -translate-y-1/2 overflow-scroll bg-[#fffafa] p-4"
         ref={formModalRef}
       >
         <Container className="relative">
-          <div className="flex items-center justify-around mb-[9rem]">
+          <div className="mb-[9rem] flex items-center justify-around">
             <div
               style={productImgBackground}
-              className="bg-color-background-light-gray bg-blend-multiply bg-contain bg-no-repeat bg-center w-[59rem] h-[59rem] p-[3.6rem] rounded-[30px] max-md:hidden"
+              className="h-[59rem] w-[59rem] rounded-[30px] bg-color-background-light-gray bg-contain bg-center bg-no-repeat p-[3.6rem] bg-blend-multiply max-md:hidden"
             >
               <ProductTag>{props.selectedProduct?.type}</ProductTag>
             </div>
             <div>
-              <Heading className="font-semibold text-[4rem] mb-6">
+              <Heading className="mb-6 text-[4rem] font-semibold">
                 {props.selectedProduct?.name}
               </Heading>
               <Rating />
@@ -99,7 +99,7 @@ const ProductForm = props => {
                 discount={props.selectedProduct?.discount}
                 className=""
               />
-              <Paragraph className="max-w-[65rem] mt-8 mb-10">
+              <Paragraph className="mb-10 mt-8 max-w-[65rem]">
                 {props.selectedProduct?.overview}
               </Paragraph>
               <Input
@@ -115,7 +115,7 @@ const ProductForm = props => {
             </div>
           </div>
           <div className="text-center">
-            <Flex className="gap-[2.4rem] mb-10 flex-wrap">
+            <Flex className="mb-10 flex-wrap gap-12">
               <Button
                 hideArrow
                 type={infoType === 'description' ? 'active' : ''}
@@ -142,7 +142,7 @@ const ProductForm = props => {
               setInputQuantity(1);
               setTimeout(() => setIsSubmitted(false), 300);
             }}
-            className="absolute top-0 right-0"
+            className="absolute right-0 top-0"
           >
             X
           </Button>

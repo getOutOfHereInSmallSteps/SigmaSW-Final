@@ -13,10 +13,10 @@ const ProductsDisplay = props => {
   const secondPage = useRef();
   const firstPage = useRef();
 
-  const productsQuantity = props.products.length;
+  // const productsQuantity = props.products.length;
 
-  const productsPageOne = props.products.slice(0, productsQuantity / 2);
-  const productsPageTwo = props.products.slice(productsQuantity / 2);
+  // const productsPageOne = props.products.slice(0, productsQuantity / 2);
+  // const productsPageTwo = props.products.slice(productsQuantity / 2);
 
   const toggleShowMoreHandler = () => {
     if (isShownMore)
@@ -31,11 +31,7 @@ const ProductsDisplay = props => {
   return (
     <React.Fragment>
       <Container>
-        <ProductsPage
-          ref={firstPage}
-          collection={productsPageOne}
-          onSelect={props.onSelect}
-        />
+        <ProductsPage ref={firstPage} page={0} onSelect={props.onSelect} />
 
         <CSSTransition
           in={isShownMore}
@@ -53,11 +49,7 @@ const ProductsDisplay = props => {
           mountOnEnter
           unmountOnExit
         >
-          <ProductsPage
-            ref={secondPage}
-            onSelect={props.onSelect}
-            collection={productsPageTwo}
-          />
+          <ProductsPage ref={secondPage} page={1} onSelect={props.onSelect} />
         </CSSTransition>
       </Container>
       <Flex>

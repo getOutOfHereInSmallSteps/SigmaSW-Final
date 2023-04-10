@@ -13,14 +13,16 @@ import ProductsDisplay from './ProductsDisplay';
 const ProductsSection = () => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
-  const productsData = useSelector(state => state.products.list);
+  // const productsData = useSelector(state => state.products.list);
   const productsRef = useRef();
 
-  const selectItemHandler = productId => {
-    const selectedItem = productsData.find(element => element.id === productId);
-    setActiveItem(selectedItem);
-    setIsModalActive(true);
-  };
+  // const selectItemHandler = productId => {
+  //   const selectedItem = productsData.find(element => element.id === productId);
+  //   setActiveItem(selectedItem);
+  //   setIsModalActive(true);
+  // };
+
+  const selectItemHandler = () => {};
 
   const closeModalHandler = () => {
     setIsModalActive(false);
@@ -36,7 +38,7 @@ const ProductsSection = () => {
 
         <ProductsDisplay
           onSelect={selectItemHandler}
-          products={productsData}
+          // products={productsData}
           productsRef={productsRef}
         />
 

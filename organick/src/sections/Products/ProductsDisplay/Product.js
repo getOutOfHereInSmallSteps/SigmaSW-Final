@@ -10,11 +10,10 @@ const Product = props => {
   const productImgBackground = {
     backgroundImage: `url(${props.productsData?.link})`,
   };
-  console.log(props.productsData);
   return (
     <div
       className={`flex h-[48rem] cursor-pointer flex-col rounded-[30px] bg-color-background-light-gray p-12 ${props.className}`}
-      onClick={() => props.onSelectItem(props.productsData?.id)}
+      onClick={() => props.onSelectItem(props.productsData.id)}
     >
       <ProductTag>{props.productsData?.type}</ProductTag>
       <div
