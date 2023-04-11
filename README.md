@@ -28,7 +28,7 @@ The changes include:
 
 - Small fixes 
 - Additional animations
-- Improved pagination, that involves limited data fetcthing (in progress)
+- Improved pagination, that involves limited data fetcthing with memoization
 - Code refactoring and other optimisations (in progress)
 
 ---
