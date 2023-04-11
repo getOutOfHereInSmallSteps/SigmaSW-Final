@@ -13,16 +13,21 @@ import ProductsDisplay from './ProductsDisplay';
 const ProductsSection = () => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
-  // const productsData = useSelector(state => state.products.list);
+  const productsData = useSelector(state => state.products.pages);
   const productsRef = useRef();
 
-  // const selectItemHandler = productId => {
-  //   const selectedItem = productsData.find(element => element.id === productId);
-  //   setActiveItem(selectedItem);
-  //   setIsModalActive(true);
-  // };
+  const selectItemHandler = productId => {
+    for (const page in productsData) {
+      const selectedItem = productsData[page].find(
+        element => element.id === productId
+      );
+      if (!selectedItem) continue;
 
-  const selectItemHandler = () => {};
+      setActiveItem(selectedItem);
+      setIsModalActive(true);
+      break;
+    }
+  };
 
   const closeModalHandler = () => {
     setIsModalActive(false);
