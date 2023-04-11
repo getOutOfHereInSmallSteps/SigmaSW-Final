@@ -10,12 +10,19 @@ import {
   limit,
   getDocs,
   startAfter,
+  where,
 } from 'firebase/firestore';
 
 import { setProducts } from '../store';
 
+const getDocumentSnapshot = async elementId => {
+  const docRef = await getDocs(
+    query(collection(db, 'products'), where('id', '==', `p${elementId}`))
+  );
+  return docRef.docs[0];
+};
+
 const useHttp = pageIndex => {
-  const [lastProduct, setLastProduct] = useState(null);
   const [productsData, setProductsData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
@@ -27,45 +34,27 @@ const useHttp = pageIndex => {
       setIsLoading(false);
       return;
     }
-    console.log('LOADING...');
     setIsLoading(true);
 
-    console.log('LAST PRODUCT' + lastProduct);
-
-    // const q = lastProduct
-    //   ? query(
-    //       collection(db, 'products'),
-    //       orderBy('discount', 'desc'),
-    //       startAfter(lastProduct),
-    //       limit(8)
-    //     )
-    //   : query(
-    //       collection(db, 'products'),
-    //       orderBy('discount', 'desc'),
-    //       limit(8)
-    //     );
-    const q = query(
-      collection(db, 'products'),
-      orderBy('discount', 'desc'),
-      startAfter(lastProduct ? lastProduct : ''),
-      limit(8)
-    );
-
-    getDocs(q)
+    getDocumentSnapshot(pageIndex * 8)
+      .then(last =>
+        getDocs(
+          query(
+            collection(db, 'products'),
+            orderBy('discount', 'desc'),
+            startAfter(last || ''),
+            limit(8)
+          )
+        )
+      )
       .then(querySnapshot => {
-        const lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-        console.log(lastVisible);
-        if (lastVisible) {
-          setLastProduct(lastVisible);
-        }
-
         const products = querySnapshot.docs.map(doc => doc.data());
         dispatch(setProducts({ products, id: pageIndex }));
         setProductsData(products);
         setIsLoading(false);
       })
-      .catch(error => console.log(error));
-  }, [lastProduct]);
+      .catch(e => console.log(e));
+  }, []);
 
   return { productsData, isLoading };
 };
